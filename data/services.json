@@ -1,0 +1,582 @@
+{
+  "categories": [
+    {
+      "id": "ho-tich",
+      "name": "Hộ tịch",
+      "icon": "users",
+      "description": "Đăng ký khai sinh, khai tử, kết hôn, và các thủ tục hộ tịch khác"
+    },
+    {
+      "id": "can-cuoc",
+      "name": "Căn cước công dân",
+      "icon": "id-card",
+      "description": "Làm mới, đổi, cấp lại thẻ căn cước công dân"
+    },
+    {
+      "id": "cu-tru",
+      "name": "Cư trú",
+      "icon": "home",
+      "description": "Đăng ký thường trú, tạm trú, tạm vắng"
+    },
+    {
+      "id": "bao-hiem",
+      "name": "Bảo hiểm",
+      "icon": "shield",
+      "description": "Bảo hiểm y tế, bảo hiểm xã hội"
+    },
+    {
+      "id": "giao-thong",
+      "name": "Giao thông",
+      "icon": "car",
+      "description": "Giấy phép lái xe, đăng ký xe, xử lý vi phạm"
+    },
+    {
+      "id": "giao-duc",
+      "name": "Giáo dục",
+      "icon": "book",
+      "description": "Văn bằng, chứng chỉ, hồ sơ học sinh"
+    },
+    {
+      "id": "doanh-nghiep",
+      "name": "Doanh nghiệp",
+      "icon": "briefcase",
+      "description": "Đăng ký kinh doanh, giấy phép, thuế"
+    },
+    {
+      "id": "dat-dai",
+      "name": "Đất đai",
+      "icon": "map",
+      "description": "Sổ đỏ, chuyển nhượng, quy hoạch"
+    }
+  ],
+  "services": [
+    {
+      "id": "dang-ky-khai-sinh",
+      "categoryId": "ho-tich",
+      "name": "Đăng ký khai sinh",
+      "shortDescription": "Đăng ký khai sinh cho trẻ em mới sinh tại Việt Nam",
+      "fullDescription": "Thủ tục đăng ký khai sinh là việc cơ quan nhà nước có thẩm quyền xác nhận sự kiện sinh của một người vào Sổ hộ tịch và cấp Giấy khai sinh cho người đó.",
+      "level": 4,
+      "status": "online",
+      "processingTime": "1-3 ngày làm việc",
+      "fee": "Miễn phí",
+      "agency": "UBND cấp xã/phường",
+      "requirements": [
+        "Giấy chứng sinh do cơ sở y tế cấp",
+        "CCCD/CMND của cha và mẹ",
+        "Giấy chứng nhận kết hôn của cha mẹ (nếu có)",
+        "Sổ hộ khẩu hoặc giấy xác nhận thông tin cư trú"
+      ],
+      "process": [
+        "Bước 1: Chuẩn bị hồ sơ theo yêu cầu",
+        "Bước 2: Nộp hồ sơ trực tuyến qua Cổng Dịch vụ công hoặc nộp trực tiếp tại UBND xã/phường",
+        "Bước 3: Cán bộ tiếp nhận và xử lý hồ sơ",
+        "Bước 4: Nhận kết quả Giấy khai sinh"
+      ],
+      "forms": [
+        {
+          "name": "Tờ khai đăng ký khai sinh",
+          "url": "/forms/to-khai-khai-sinh.pdf"
+        }
+      ],
+      "relatedServices": ["dang-ky-thuong-tru", "cap-the-bhyt"],
+      "faqs": [
+        {
+          "question": "Thời hạn đăng ký khai sinh là bao lâu?",
+          "answer": "Trong thời hạn 60 ngày kể từ ngày sinh, cha hoặc mẹ có trách nhiệm đăng ký khai sinh cho con."
+        },
+        {
+          "question": "Có thể đăng ký khai sinh cho con ở đâu?",
+          "answer": "Tại UBND cấp xã nơi cư trú của người cha hoặc người mẹ."
+        }
+      ],
+      "views": 15420,
+      "rating": 4.8
+    },
+    {
+      "id": "cap-cccd-lan-dau",
+      "categoryId": "can-cuoc",
+      "name": "Cấp CCCD gắn chip lần đầu",
+      "shortDescription": "Làm thẻ căn cước công dân gắn chip cho công dân lần đầu",
+      "fullDescription": "Thủ tục cấp thẻ Căn cước công dân gắn chip lần đầu cho công dân Việt Nam từ đủ 14 tuổi trở lên.",
+      "level": 4,
+      "status": "online",
+      "processingTime": "7 ngày làm việc",
+      "fee": "Miễn phí (lần đầu)",
+      "agency": "Công an cấp huyện/quận",
+      "requirements": [
+        "Sổ hộ khẩu hoặc giấy xác nhận thông tin cư trú",
+        "Giấy khai sinh (đối với người dưới 18 tuổi)",
+        "Ảnh chân dung 4x6 (chụp tại cơ quan công an)"
+      ],
+      "process": [
+        "Bước 1: Đặt lịch hẹn trực tuyến qua VNeID hoặc Cổng Dịch vụ công",
+        "Bước 2: Đến cơ quan công an theo lịch hẹn",
+        "Bước 3: Chụp ảnh, lấy vân tay và xác minh thông tin",
+        "Bước 4: Nhận thẻ CCCD tại địa chỉ đã đăng ký hoặc tại cơ quan công an"
+      ],
+      "forms": [],
+      "relatedServices": ["doi-cccd", "cap-lai-cccd"],
+      "faqs": [
+        {
+          "question": "CCCD gắn chip có thời hạn bao lâu?",
+          "answer": "CCCD có giá trị sử dụng đến khi công dân đủ 25, 40, 60 tuổi. Từ đủ 60 tuổi, CCCD có giá trị sử dụng vô thời hạn."
+        },
+        {
+          "question": "Có thể đăng ký làm CCCD online không?",
+          "answer": "Có, bạn có thể đặt lịch hẹn qua ứng dụng VNeID hoặc Cổng Dịch vụ công quốc gia."
+        }
+      ],
+      "views": 28350,
+      "rating": 4.9
+    },
+    {
+      "id": "dang-ky-thuong-tru",
+      "categoryId": "cu-tru",
+      "name": "Đăng ký thường trú",
+      "shortDescription": "Thủ tục đăng ký, tách, nhập hộ khẩu thường trú",
+      "fullDescription": "Đăng ký thường trú là việc công dân đăng ký nơi thường xuyên sinh sống với cơ quan có thẩm quyền.",
+      "level": 4,
+      "status": "online",
+      "processingTime": "5-7 ngày làm việc",
+      "fee": "Miễn phí",
+      "agency": "Công an cấp xã/phường",
+      "requirements": [
+        "Phiếu báo thay đổi hộ khẩu, nhân khẩu",
+        "CCCD/CMND của người đăng ký",
+        "Giấy tờ chứng minh chỗ ở hợp pháp",
+        "Giấy tờ chứng minh quan hệ gia đình (nếu đăng ký vào hộ người khác)"
+      ],
+      "process": [
+        "Bước 1: Chuẩn bị hồ sơ theo yêu cầu",
+        "Bước 2: Nộp hồ sơ trực tuyến hoặc trực tiếp tại công an xã/phường",
+        "Bước 3: Cán bộ xác minh và xử lý hồ sơ",
+        "Bước 4: Nhận thông báo kết quả đăng ký thường trú"
+      ],
+      "forms": [
+        {
+          "name": "Phiếu báo thay đổi hộ khẩu, nhân khẩu",
+          "url": "/forms/phieu-bao-thay-doi-ho-khau.pdf"
+        }
+      ],
+      "relatedServices": ["dang-ky-tam-tru", "dang-ky-khai-sinh"],
+      "faqs": [
+        {
+          "question": "Điều kiện đăng ký thường trú là gì?",
+          "answer": "Có chỗ ở hợp pháp thuộc quyền sở hữu hoặc được chủ sở hữu đồng ý cho đăng ký thường trú."
+        }
+      ],
+      "views": 12580,
+      "rating": 4.7
+    },
+    {
+      "id": "cap-the-bhyt",
+      "categoryId": "bao-hiem",
+      "name": "Cấp thẻ bảo hiểm y tế",
+      "shortDescription": "Đăng ký, gia hạn thẻ bảo hiểm y tế toàn dân",
+      "fullDescription": "Thủ tục cấp thẻ bảo hiểm y tế cho các đối tượng tham gia BHYT theo quy định.",
+      "level": 4,
+      "status": "online",
+      "processingTime": "5-10 ngày làm việc",
+      "fee": "Theo mức đóng BHYT",
+      "agency": "Bảo hiểm xã hội cấp huyện/quận",
+      "requirements": [
+        "Tờ khai tham gia BHYT",
+        "CCCD/CMND",
+        "Sổ hộ khẩu hoặc giấy xác nhận cư trú",
+        "Giấy tờ chứng minh đối tượng (nếu có)"
+      ],
+      "process": [
+        "Bước 1: Điền tờ khai tham gia BHYT",
+        "Bước 2: Nộp hồ sơ tại cơ quan BHXH hoặc qua Cổng Dịch vụ công",
+        "Bước 3: Đóng phí BHYT theo quy định",
+        "Bước 4: Nhận thẻ BHYT"
+      ],
+      "forms": [
+        {
+          "name": "Tờ khai tham gia BHYT",
+          "url": "/forms/to-khai-bhyt.pdf"
+        }
+      ],
+      "relatedServices": ["cap-so-bhxh", "dang-ky-kham-benh"],
+      "faqs": [
+        {
+          "question": "Mức đóng BHYT hộ gia đình là bao nhiêu?",
+          "answer": "Mức đóng bằng 4,5% mức lương cơ sở cho người thứ nhất, giảm dần cho người thứ 2, 3, 4, 5 trở đi."
+        }
+      ],
+      "views": 9870,
+      "rating": 4.6
+    },
+    {
+      "id": "doi-gplx",
+      "categoryId": "giao-thong",
+      "name": "Đổi giấy phép lái xe",
+      "shortDescription": "Đổi, cấp lại giấy phép lái xe các hạng",
+      "fullDescription": "Thủ tục đổi giấy phép lái xe khi hết hạn hoặc cấp lại khi mất, hỏng.",
+      "level": 4,
+      "status": "online",
+      "processingTime": "5-7 ngày làm việc",
+      "fee": "135.000 VNĐ",
+      "agency": "Sở Giao thông vận tải",
+      "requirements": [
+        "Đơn đề nghị đổi/cấp lại GPLX",
+        "GPLX cũ (đối với trường hợp đổi)",
+        "CCCD/CMND",
+        "Giấy khám sức khỏe (không quá 6 tháng)",
+        "02 ảnh 3x4 nền xanh"
+      ],
+      "process": [
+        "Bước 1: Nộp hồ sơ trực tuyến qua Cổng Dịch vụ công",
+        "Bước 2: Thanh toán lệ phí trực tuyến",
+        "Bước 3: Chờ xử lý và phê duyệt hồ sơ",
+        "Bước 4: Nhận GPLX mới qua bưu điện hoặc tại Sở GTVT"
+      ],
+      "forms": [
+        {
+          "name": "Đơn đề nghị đổi/cấp lại GPLX",
+          "url": "/forms/don-doi-gplx.pdf"
+        }
+      ],
+      "relatedServices": ["dang-ky-xe", "xu-ly-vi-pham-gt"],
+      "faqs": [
+        {
+          "question": "GPLX hết hạn bao lâu thì phải thi lại?",
+          "answer": "Nếu GPLX hết hạn quá 3 tháng đến dưới 1 năm, phải thi lại lý thuyết. Hết hạn trên 1 năm phải thi lại cả lý thuyết và thực hành."
+        }
+      ],
+      "views": 18920,
+      "rating": 4.5
+    },
+    {
+      "id": "dang-ky-ket-hon",
+      "categoryId": "ho-tich",
+      "name": "Đăng ký kết hôn",
+      "shortDescription": "Đăng ký kết hôn cho công dân Việt Nam",
+      "fullDescription": "Thủ tục đăng ký kết hôn là việc cơ quan nhà nước có thẩm quyền công nhận và ghi nhận việc xác lập quan hệ vợ chồng giữa hai người.",
+      "level": 4,
+      "status": "online",
+      "processingTime": "5-7 ngày làm việc",
+      "fee": "Miễn phí",
+      "agency": "UBND cấp xã/phường",
+      "requirements": [
+        "Tờ khai đăng ký kết hôn (theo mẫu)",
+        "CCCD/CMND của hai bên",
+        "Giấy xác nhận tình trạng hôn nhân",
+        "Giấy khám sức khỏe tiền hôn nhân"
+      ],
+      "process": [
+        "Bước 1: Hai bên nam nữ cùng nộp hồ sơ đăng ký kết hôn",
+        "Bước 2: Cán bộ hộ tịch kiểm tra hồ sơ",
+        "Bước 3: Tổ chức lễ đăng ký kết hôn tại UBND",
+        "Bước 4: Nhận Giấy chứng nhận kết hôn"
+      ],
+      "forms": [
+        {
+          "name": "Tờ khai đăng ký kết hôn",
+          "url": "/forms/to-khai-ket-hon.pdf"
+        }
+      ],
+      "relatedServices": ["dang-ky-khai-sinh", "cap-xac-nhan-tinh-trang-hon-nhan"],
+      "faqs": [
+        {
+          "question": "Độ tuổi kết hôn theo quy định là bao nhiêu?",
+          "answer": "Nam từ đủ 20 tuổi, nữ từ đủ 18 tuổi trở lên."
+        }
+      ],
+      "views": 8650,
+      "rating": 4.8
+    },
+    {
+      "id": "dang-ky-kinh-doanh",
+      "categoryId": "doanh-nghiep",
+      "name": "Đăng ký hộ kinh doanh",
+      "shortDescription": "Đăng ký thành lập hộ kinh doanh cá thể",
+      "fullDescription": "Thủ tục đăng ký thành lập hộ kinh doanh cho cá nhân, nhóm cá nhân hoặc hộ gia đình.",
+      "level": 4,
+      "status": "online",
+      "processingTime": "3-5 ngày làm việc",
+      "fee": "100.000 VNĐ",
+      "agency": "UBND cấp quận/huyện",
+      "requirements": [
+        "Giấy đề nghị đăng ký hộ kinh doanh",
+        "CCCD/CMND của chủ hộ",
+        "Hợp đồng thuê địa điểm kinh doanh hoặc giấy tờ chứng minh quyền sử dụng địa điểm"
+      ],
+      "process": [
+        "Bước 1: Chuẩn bị hồ sơ đăng ký",
+        "Bước 2: Nộp hồ sơ qua Cổng Dịch vụ công hoặc tại bộ phận một cửa",
+        "Bước 3: Chờ xử lý và cấp Giấy chứng nhận",
+        "Bước 4: Nhận Giấy chứng nhận đăng ký hộ kinh doanh"
+      ],
+      "forms": [
+        {
+          "name": "Giấy đề nghị đăng ký hộ kinh doanh",
+          "url": "/forms/dang-ky-ho-kinh-doanh.pdf"
+        }
+      ],
+      "relatedServices": ["dang-ky-thue", "dang-ky-doanh-nghiep"],
+      "faqs": [
+        {
+          "question": "Hộ kinh doanh có cần đăng ký mã số thuế không?",
+          "answer": "Có, sau khi được cấp Giấy chứng nhận đăng ký hộ kinh doanh, phải đăng ký thuế tại Chi cục Thuế."
+        }
+      ],
+      "views": 7230,
+      "rating": 4.4
+    },
+    {
+      "id": "cap-so-do",
+      "categoryId": "dat-dai",
+      "name": "Cấp Giấy chứng nhận quyền sử dụng đất",
+      "shortDescription": "Cấp sổ đỏ lần đầu, cấp đổi, cấp lại",
+      "fullDescription": "Thủ tục cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất.",
+      "level": 3,
+      "status": "partial",
+      "processingTime": "30-45 ngày làm việc",
+      "fee": "Theo quy định địa phương",
+      "agency": "Văn phòng đăng ký đất đai",
+      "requirements": [
+        "Đơn đăng ký cấp Giấy chứng nhận",
+        "Giấy tờ về nguồn gốc đất",
+        "CCCD/CMND của người sử dụng đất",
+        "Bản đồ địa chính hoặc trích đo địa chính"
+      ],
+      "process": [
+        "Bước 1: Nộp hồ sơ tại Văn phòng đăng ký đất đai",
+        "Bước 2: Cơ quan tiếp nhận, kiểm tra hồ sơ",
+        "Bước 3: Thẩm định, đo đạc thực địa",
+        "Bước 4: Cấp Giấy chứng nhận (sổ đỏ)"
+      ],
+      "forms": [
+        {
+          "name": "Đơn đăng ký cấp GCN QSDĐ",
+          "url": "/forms/don-cap-so-do.pdf"
+        }
+      ],
+      "relatedServices": ["chuyen-nhuong-dat", "sang-ten-so-do"],
+      "faqs": [
+        {
+          "question": "Phí cấp sổ đỏ là bao nhiêu?",
+          "answer": "Phí tùy thuộc vào địa phương, thông thường từ 100.000 - 500.000 VNĐ cho lệ phí trước bạ và phí cấp GCN."
+        }
+      ],
+      "views": 21500,
+      "rating": 4.3
+    }
+  ],
+  "elections": {
+    "upcoming": [
+      {
+        "id": "bau-cu-quoc-hoi-2026",
+        "name": "Bầu cử Đại biểu Quốc hội khóa XVI và Đại biểu HĐND các cấp nhiệm kỳ 2026-2031",
+        "shortName": "Bầu cử Quốc hội khóa XVI & HĐND các cấp",
+        "date": "2026-05-24",
+        "type": "national",
+        "description": "Cuộc bầu cử đại biểu Quốc hội khóa XVI và đại biểu Hội đồng nhân dân các cấp nhiệm kỳ 2026-2031 là sự kiện chính trị quan trọng của đất nước, là ngày hội của toàn dân.",
+        "positions": [
+          {
+            "name": "Đại biểu Quốc hội khóa XVI",
+            "quantity": 500,
+            "term": "2026-2031"
+          },
+          {
+            "name": "Đại biểu HĐND cấp tỉnh",
+            "quantity": "Theo từng địa phương",
+            "term": "2026-2031"
+          },
+          {
+            "name": "Đại biểu HĐND cấp huyện",
+            "quantity": "Theo từng địa phương",
+            "term": "2026-2031"
+          },
+          {
+            "name": "Đại biểu HĐND cấp xã",
+            "quantity": "Theo từng địa phương",
+            "term": "2026-2031"
+          }
+        ],
+        "importantDates": [
+          {
+            "date": "2026-02-24",
+            "event": "Công bố ngày bầu cử (90 ngày trước)",
+            "status": "completed"
+          },
+          {
+            "date": "2026-03-14",
+            "event": "Hạn chót lập danh sách sơ bộ ứng cử viên",
+            "status": "completed"
+          },
+          {
+            "date": "2026-04-14",
+            "event": "Công bố danh sách chính thức ứng cử viên (40 ngày trước)",
+            "status": "upcoming"
+          },
+          {
+            "date": "2026-04-24",
+            "event": "Niêm yết danh sách cử tri (30 ngày trước)",
+            "status": "upcoming"
+          },
+          {
+            "date": "2026-05-04",
+            "event": "Hạn chót khiếu nại về danh sách cử tri",
+            "status": "upcoming"
+          },
+          {
+            "date": "2026-05-14",
+            "event": "Bắt đầu chiến dịch vận động bầu cử (10 ngày trước)",
+            "status": "upcoming"
+          },
+          {
+            "date": "2026-05-22",
+            "event": "Kết thúc chiến dịch vận động bầu cử",
+            "status": "upcoming"
+          },
+          {
+            "date": "2026-05-24",
+            "event": "NGÀY BẦU CỬ - Chủ nhật",
+            "status": "election-day"
+          }
+        ],
+        "votingHours": "07:00 - 21:00",
+        "requirements": [
+          "Công dân Việt Nam từ đủ 18 tuổi trở lên tính đến ngày bầu cử (sinh trước 24/05/2008)",
+          "Không thuộc trường hợp bị tước quyền bầu cử theo quy định pháp luật",
+          "Có tên trong danh sách cử tri tại khu vực bỏ phiếu",
+          "Mang theo Căn cước công dân (CCCD) hoặc Chứng minh nhân dân (CMND)",
+          "Đến đúng khu vực bỏ phiếu đã được thông báo",
+          "Chỉ được bầu 01 lần, tự mình bỏ phiếu (không được nhờ người khác bầu thay)"
+        ],
+        "eligibleVoters": {
+          "age": "Đủ 18 tuổi trở lên (sinh trước ngày 24/05/2008)",
+          "citizenship": "Công dân Việt Nam",
+          "exceptions": [
+            "Người đang bị tước quyền bầu cử theo bản án của Tòa án",
+            "Người đang chấp hành hình phạt tù",
+            "Người mất năng lực hành vi dân sự"
+          ]
+        },
+        "eligibleCandidates": {
+          "congressAge": "Đủ 21 tuổi trở lên (sinh trước ngày 24/05/2005)",
+          "councilAge": "Đủ 21 tuổi trở lên",
+          "requirements": [
+            "Công dân Việt Nam",
+            "Trung thành với Tổ quốc và Hiến pháp",
+            "Có phẩm chất đạo đức tốt",
+            "Có trình độ và năng lực thực hiện nhiệm vụ",
+            "Liên hệ chặt chẽ với nhân dân"
+          ]
+        },
+        "locations": "Tra cứu điểm bầu cử trên hệ thống hoặc liên hệ UBND xã/phường nơi cư trú"
+      }
+    ],
+    "info": {
+      "title": "Bầu cử - Quyền và nghĩa vụ thiêng liêng của công dân",
+      "content": "Bầu cử đại biểu Quốc hội và đại biểu Hội đồng nhân dân là hình thức dân chủ trực tiếp, là phương thức để nhân dân thực hiện quyền lực nhà nước, thể hiện ý chí, nguyện vọng và quyền làm chủ của nhân dân.",
+      "principles": [
+        "Phổ thông: Mọi công dân đủ 18 tuổi đều có quyền bầu cử",
+        "Bình đẳng: Mỗi cử tri có một phiếu bầu có giá trị ngang nhau",
+        "Trực tiếp: Cử tri trực tiếp bỏ phiếu, không qua trung gian",
+        "Bỏ phiếu kín: Không ai được biết cử tri bầu cho ai"
+      ],
+      "howToVote": [
+        "Kiểm tra tên trong danh sách cử tri tại UBND xã/phường nơi cư trú (trước ngày bầu cử ít nhất 20 ngày)",
+        "Nhận Thẻ cử tri do Tổ bầu cử cấp phát",
+        "Theo dõi thông tin về các ứng cử viên qua các kênh chính thống",
+        "Đến điểm bầu cử đúng ngày, giờ quy định (07:00 - 21:00 ngày 24/05/2026)",
+        "Xuất trình CCCD/CMND và Thẻ cử tri cho Tổ bầu cử",
+        "Nhận phiếu bầu (đại biểu Quốc hội + đại biểu HĐND các cấp)",
+        "Vào buồng kín để gạch tên ứng cử viên không tín nhiệm (nếu có)",
+        "Tự tay bỏ phiếu vào hòm phiếu"
+      ],
+      "invalidBallots": [
+        "Phiếu không phải do Tổ bầu cử phát ra",
+        "Phiếu không có dấu của Tổ bầu cử",
+        "Phiếu để số người được bầu nhiều hơn số lượng đại biểu được bầu",
+        "Phiếu gạch hết tên ứng cử viên",
+        "Phiếu có viết thêm tên người ngoài danh sách ứng cử viên"
+      ],
+      "voterRights": [
+        "Được thông báo về ngày bầu cử, nơi bỏ phiếu trước ít nhất 10 ngày",
+        "Được kiểm tra tên trong danh sách cử tri",
+        "Được khiếu nại nếu không có tên hoặc sai thông tin trong danh sách cử tri",
+        "Được nhận đầy đủ thông tin về các ứng cử viên",
+        "Được bỏ phiếu kín, không ai can thiệp",
+        "Được từ chối nhận phiếu bầu nếu không muốn bầu"
+      ],
+      "prohibitedActions": [
+        "Dùng vũ lực, đe dọa, lừa dối để cản trở việc bầu cử",
+        "Mua chuộc, hối lộ cử tri",
+        "Giả mạo giấy tờ, gian lận phiếu bầu",
+        "Bầu thay người khác",
+        "Tiết lộ kết quả kiểm phiếu khi chưa được phép"
+      ]
+    },
+    "checklistBeforeElection": [
+      {
+        "task": "Kiểm tra tên trong danh sách cử tri",
+        "deadline": "Trước 30 ngày",
+        "where": "UBND xã/phường nơi cư trú"
+      },
+      {
+        "task": "Nhận Thẻ cử tri",
+        "deadline": "Trước 10 ngày",
+        "where": "Tổ trưởng Tổ bầu cử cấp phát tại nhà"
+      },
+      {
+        "task": "Chuẩn bị CCCD/CMND",
+        "deadline": "Trước ngày bầu cử",
+        "where": "Tại nhà"
+      },
+      {
+        "task": "Tìm hiểu về ứng cử viên",
+        "deadline": "Trước ngày bầu cử",
+        "where": "Qua các kênh thông tin chính thống"
+      },
+      {
+        "task": "Xác định địa điểm và giờ đi bầu",
+        "deadline": "Trước ngày bầu cử",
+        "where": "Theo thông báo của Tổ bầu cử"
+      }
+    ],
+    "statistics": {
+      "totalEligibleVoters": 70000000,
+      "totalPollingStations": 85000,
+      "totalConstituencies": 184,
+      "congressSeats": 500,
+      "provincialCouncilSeats": 3800,
+      "districtCouncilSeats": 23000,
+      "communeCouncilSeats": 310000
+    }
+  },
+  "news": [
+    {
+      "id": 1,
+      "title": "Triển khai CCCD gắn chip trên toàn quốc",
+      "summary": "Từ ngày 01/01/2026, tất cả công dân từ đủ 14 tuổi phải thực hiện cấp CCCD gắn chip.",
+      "date": "2026-01-15",
+      "category": "Thông báo"
+    },
+    {
+      "id": 2,
+      "title": "Cổng Dịch vụ công quốc gia nâng cấp phiên bản 3.0",
+      "summary": "Phiên bản mới với nhiều tính năng cải tiến, giao diện thân thiện hơn.",
+      "date": "2026-01-10",
+      "category": "Tin tức"
+    },
+    {
+      "id": 3,
+      "title": "Hướng dẫn đăng ký tiêm vắc-xin trực tuyến",
+      "summary": "Công dân có thể đăng ký tiêm vắc-xin phòng bệnh qua Cổng Dịch vụ công.",
+      "date": "2026-01-05",
+      "category": "Hướng dẫn"
+    }
+  ],
+  "statistics": {
+    "totalServices": 1847,
+    "onlineServices": 1523,
+    "totalProvinces": 63,
+    "totalUsers": 52000000,
+    "dailyTransactions": 250000
+  }
+}

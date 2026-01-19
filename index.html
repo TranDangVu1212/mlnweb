@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch Vụ Công Việt Nam - Cổng Thông Tin Công Dân</title>
+    <meta name="description" content="Cổng thông tin dịch vụ công trực tuyến của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam. Tìm hiểu và sử dụng các dịch vụ công một cách dễ dàng.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23DA251D'/><polygon points='50,20 58,40 80,40 62,52 70,75 50,60 30,75 38,52 20,40 42,40' fill='%23FFCD00'/></svg>">
+    
+    <!-- Google Fonts - Professional Government -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['EB Garamond', 'serif'],
+                        body: ['IBM Plex Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0F172A',      // Navy đậm - uy quyền
+                        secondary: '#B8860B',    // Vàng đậm - trang trọng
+                        accent: '#0369A1',       // Xanh dương chính phủ
+                        background: '#F8FAFC',   // Trắng xám nhẹ
+                        surface: '#FFFFFF',
+                        text: '#020617',         // Đen đậm
+                        muted: '#475569',        // Xám chì
+                        success: '#166534',      // Xanh lá đậm
+                        border: '#E2E8F0',
+                        // Government formal colors
+                        vietred: '#B91C1C',      // Đỏ cờ trang trọng
+                        gold: '#B8860B',         // Vàng sao trang trọng  
+                        navy: '#0F172A',         // Navy uy quyền
+                        steel: '#334155',        // Xám thép
+                    },
+                    boxShadow: {
+                        'formal': '0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -2px rgba(15, 23, 42, 0.1)',
+                        'formal-lg': '0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.1)',
+                        'formal-card': '0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.1)',
+                    },
+                    borderRadius: {
+                        'formal': '8px',
+                        'formal-lg': '12px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        .gradient-hero {
+            background: linear-gradient(180deg, #F8FAFC 0%, #E2E8F0 100%);
+        }
+        
+        .gov-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230F172A' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .formal-button {
+            transition: all 0.15s ease-out;
+        }
+        
+        .formal-button:hover {
+            transform: translateY(-1px);
+        }
+        
+        .formal-button:active {
+            transform: translateY(0);
+        }
+        
+        .gold-border {
+            border: 2px solid #B8860B;
+        }
+        
+        .gov-card {
+            border-left: 4px solid #B91C1C;
+        }
+    </style>
+</head>
+<body class="font-body bg-background text-text antialiased">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-border bg-white/95 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 cursor-pointer">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-vietred rounded-formal flex items-center justify-center shadow-formal">
+                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="font-heading font-semibold text-lg text-primary tracking-wide">CỔNG DỊCH VỤ CÔNG</span>
+                        <span class="block text-xs text-muted uppercase tracking-wider">Quốc gia Việt Nam</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#services" class="text-text hover:text-accent transition-colors font-medium cursor-pointer">Dịch vụ</a>
+                    <a href="#guide" class="text-text hover:text-accent transition-colors font-medium cursor-pointer">Hướng dẫn</a>
+                    <a href="#tracking" class="text-text hover:text-accent transition-colors font-medium cursor-pointer">Tra cứu</a>
+                    <a href="#contact" class="text-text hover:text-accent transition-colors font-medium cursor-pointer">Liên hệ</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <a href="#vote" class="formal-button bg-vietred text-white font-body font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-formal shadow-formal hover:shadow-formal-lg flex items-center gap-2 cursor-pointer">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22,4 12,14.01 9,11.01"/>
+                    </svg>
+                    <span class="hidden sm:inline">Đi Bầu Cử</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-hero gov-pattern min-h-screen pt-24 pb-16 px-4 sm:px-6 relative overflow-hidden">
+        <!-- Formal Decorative Elements -->
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-vietred via-gold to-vietred"></div>
+        
+        <div class="max-w-7xl mx-auto pt-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white border border-border rounded-formal px-4 py-2 shadow-formal mb-6">
+                        <span class="w-2 h-2 bg-success rounded-full animate-pulse"></span>
+                        <span class="text-sm font-medium text-muted">Hệ thống đang hoạt động</span>
+                    </div>
+                    
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-primary leading-tight mb-6 tracking-tight">
+                        CỔNG DỊCH VỤ CÔNG
+                        <span class="text-vietred"> QUỐC GIA</span>
+                        <br>
+                        <span class="text-accent">Minh bạch - Hiệu quả - Chuyên nghiệp</span>
+                    </h1>
+                    
+                    <p class="text-lg text-muted mb-8 max-w-xl mx-auto lg:mx-0">
+                        Cổng thông tin điện tử giúp công dân tiếp cận các dịch vụ công của Nhà nước 
+                        một cách dễ dàng, minh bạch và hiệu quả.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#services" class="formal-button bg-accent text-white font-body font-semibold px-8 py-4 rounded-formal shadow-formal hover:shadow-formal-lg text-base inline-flex items-center justify-center gap-2 cursor-pointer">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.35-4.35"/>
+                            </svg>
+                            Tra cứu dịch vụ
+                        </a>
+                        <a href="#guide" class="formal-button bg-white text-primary font-body font-semibold px-8 py-4 rounded-formal shadow-formal hover:shadow-formal-lg text-base inline-flex items-center justify-center gap-2 border border-border cursor-pointer">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                <line x1="12" y1="17" x2="12.01" y2="17"/>
+                            </svg>
+                            Hướng dẫn sử dụng
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-4 mt-12" data-stats>
+                        <div class="bg-white border border-border rounded-formal p-4 shadow-formal text-center">
+                            <div class="font-heading text-2xl sm:text-3xl font-semibold text-primary" data-stat="totalServices">1847</div>
+                            <div class="text-sm text-muted">Dịch vụ</div>
+                        </div>
+                        <div class="bg-white border border-border rounded-formal p-4 shadow-formal text-center">
+                            <div class="font-heading text-2xl sm:text-3xl font-semibold text-accent" data-stat="totalProvinces">63</div>
+                            <div class="text-sm text-muted">Tỉnh/Thành</div>
+                        </div>
+                        <div class="bg-white border border-border rounded-formal p-4 shadow-formal text-center">
+                            <div class="font-heading text-2xl sm:text-3xl font-semibold text-success">24/7</div>
+                            <div class="text-sm text-muted">Hỗ trợ</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Illustration -->
+                <div class="relative">
+                    <div class="bg-white rounded-formal-lg shadow-formal-card p-8 border border-border">
+                        <!-- Vietnam Flag Stylized -->
+                        <div class="aspect-video bg-vietred rounded-formal flex items-center justify-center relative overflow-hidden">
+                            <svg class="w-32 h-32 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="mt-6 text-center border-t border-border pt-6">
+                            <h3 class="font-heading text-xl font-semibold text-primary uppercase tracking-wide">Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam</h3>
+                            <p class="text-muted mt-2 font-medium">Độc lập - Tự do - Hạnh phúc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vote CTA Banner -->
+    <section id="vote" class="bg-vietred py-8 px-4 sm:px-6 border-y-4 border-gold">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-white">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 bg-gold rounded-formal flex items-center justify-center">
+                        <svg class="w-8 h-8 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22,4 12,14.01 9,11.01"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="font-heading text-2xl sm:text-3xl font-semibold uppercase tracking-wide">Toàn Dân Đi Bầu Cử</h2>
+                        <p class="text-white/90">Quyền và nghĩa vụ thiêng liêng của mỗi công dân</p>
+                    </div>
+                </div>
+                <a href="/election.html" class="formal-button bg-gold text-primary font-body font-semibold px-8 py-4 rounded-formal shadow-formal hover:bg-yellow-600 transition-colors flex items-center gap-2 cursor-pointer">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    Xem Lịch Bầu Cử
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 sm:px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-accent/10 text-accent font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Dịch Vụ Công</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-semibold text-primary mb-4">
+                    Các Dịch Vụ Phổ Biến
+                </h2>
+                <p class="text-muted max-w-2xl mx-auto">
+                    Truy cập nhanh các dịch vụ công được sử dụng nhiều nhất. Quy trình đơn giản, minh bạch.
+                </p>
+            </div>
+            
+            <div id="services-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Services will be loaded dynamically -->
+                <div class="animate-pulse bg-gray-100 rounded-formal-lg h-64 border border-border"></div>
+                <div class="animate-pulse bg-gray-100 rounded-formal-lg h-64 border border-border"></div>
+                <div class="animate-pulse bg-gray-100 rounded-formal-lg h-64 border border-border"></div>
+                <div class="animate-pulse bg-gray-100 rounded-formal-lg h-64 border border-border"></div>
+                <div class="animate-pulse bg-gray-100 rounded-formal-lg h-64 border border-border"></div>
+                <div class="animate-pulse bg-gray-100 rounded-formal-lg h-64 border border-border"></div>
+            </div>
+            
+            <!-- View All Services Button -->
+            <div class="text-center mt-10">
+                <a href="/tat-ca-dich-vu" class="formal-button inline-flex items-center gap-2 bg-accent text-white font-body font-semibold px-8 py-4 rounded-formal shadow-formal hover:shadow-formal-lg cursor-pointer">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"/>
+                        <rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/>
+                        <rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                    Xem tất cả dịch vụ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section id="guide" class="py-20 px-4 sm:px-6 bg-background">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-success/10 text-success font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Hướng Dẫn</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-semibold text-primary mb-4">
+                    Quy Trình Thực Hiện Thủ Tục
+                </h2>
+                <p class="text-muted max-w-2xl mx-auto">
+                    Chỉ cần 3 bước đơn giản để hoàn thành các thủ tục hành chính trực tuyến
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="bg-white rounded-formal-lg p-8 shadow-formal-card border border-border text-center gov-card">
+                        <div class="w-16 h-16 bg-accent/10 rounded-formal flex items-center justify-center mx-auto mb-6">
+                            <span class="font-heading text-3xl font-semibold text-accent">01</span>
+                        </div>
+                        <h3 class="font-heading text-xl font-semibold text-primary mb-3">Đăng Nhập Hệ Thống</h3>
+                        <p class="text-muted">Đăng nhập bằng tài khoản VNeID hoặc tạo tài khoản mới trên Cổng Dịch Vụ Công</p>
+                    </div>
+                    <!-- Arrow (desktop) -->
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                        <svg class="w-8 h-8 text-steel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="bg-white rounded-formal-lg p-8 shadow-formal-card border border-border text-center gov-card">
+                        <div class="w-16 h-16 bg-vietred/10 rounded-formal flex items-center justify-center mx-auto mb-6">
+                            <span class="font-heading text-3xl font-semibold text-vietred">02</span>
+                        </div>
+                        <h3 class="font-heading text-xl font-semibold text-primary mb-3">Chọn Dịch Vụ</h3>
+                        <p class="text-muted">Tìm kiếm và chọn dịch vụ công cần thực hiện, điền đầy đủ thông tin theo biểu mẫu</p>
+                    </div>
+                    <!-- Arrow (desktop) -->
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                        <svg class="w-8 h-8 text-steel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div>
+                    <div class="bg-white rounded-formal-lg p-8 shadow-formal-card border border-border text-center gov-card">
+                        <div class="w-16 h-16 bg-success/10 rounded-formal flex items-center justify-center mx-auto mb-6">
+                            <span class="font-heading text-3xl font-semibold text-success">03</span>
+                        </div>
+                        <h3 class="font-heading text-xl font-semibold text-primary mb-3">Nhận Kết Quả</h3>
+                        <p class="text-muted">Theo dõi tiến độ và nhận kết quả trực tuyến hoặc qua đường bưu điện</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 px-4 sm:px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-accent/10 text-accent font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Phản Hồi</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-semibold text-primary mb-4">
+                    Ý Kiến Công Dân
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-background rounded-formal-lg p-6 shadow-formal border border-border">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="text-muted mb-4 italic">"Làm căn cước công dân online nhanh lắm! Chỉ cần đặt lịch hẹn rồi đến nhận, không phải xếp hàng như trước."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-accent/10 rounded-formal flex items-center justify-center">
+                            <span class="font-heading font-semibold text-accent">NH</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-primary">Nguyễn Hương</div>
+                            <div class="text-sm text-muted">Hà Nội</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-background rounded-formal-lg p-6 shadow-formal border border-border">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="text-muted mb-4 italic">"Giao diện dễ sử dụng, người lớn tuổi như tôi cũng tự làm được. Cảm ơn đội ngũ phát triển!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-vietred/10 rounded-formal flex items-center justify-center">
+                            <span class="font-heading font-semibold text-vietred">TM</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-primary">Trần Minh</div>
+                            <div class="text-sm text-muted">TP.HCM</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-background rounded-formal-lg p-6 shadow-formal border border-border">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    </div>
+                    <p class="text-muted mb-4 italic">"Đăng ký khai sinh cho con online, 3 ngày sau nhận giấy tại nhà. Tiện lợi quá!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-success/10 rounded-formal flex items-center justify-center">
+                            <span class="font-heading font-semibold text-success">LA</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-primary">Lê Anh</div>
+                            <div class="text-sm text-muted">Đà Nẵng</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Section -->
+    <section id="tracking" class="py-20 px-4 sm:px-6 bg-background">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="inline-block bg-accent/10 text-accent font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Tra Cứu</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-semibold text-primary mb-4">
+                    Tra Cứu Hồ Sơ
+                </h2>
+                <p class="text-muted max-w-2xl mx-auto">
+                    Nhập mã hồ sơ để theo dõi tiến độ xử lý thủ tục hành chính của bạn
+                </p>
+            </div>
+            
+            <!-- Tracking Form -->
+            <div class="bg-white rounded-formal-lg p-8 shadow-formal-card border border-border">
+                <form id="tracking-form" class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex-1 relative">
+                        <svg class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                        <input 
+                            type="text" 
+                            id="tracking-input"
+                            placeholder="Nhập mã hồ sơ (VD: HS2024001234)" 
+                            class="w-full pl-12 pr-4 py-4 rounded-formal border border-border bg-background focus:border-accent focus:outline-none transition-colors"
+                        >
+                    </div>
+                    <button type="submit" class="formal-button bg-accent text-white font-body font-semibold px-8 py-4 rounded-formal shadow-formal hover:shadow-formal-lg flex items-center justify-center gap-2 cursor-pointer">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                        Tra cứu
+                    </button>
+                </form>
+                
+                <!-- Demo hint -->
+                <p class="text-sm text-muted mt-4 text-center">
+                    Thử với mã: <code class="bg-background px-2 py-1 rounded-formal border border-border">HS2024001234</code> hoặc <code class="bg-background px-2 py-1 rounded-formal border border-border">HS2024005678</code>
+                </p>
+            </div>
+            
+            <!-- Tracking Result -->
+            <div id="tracking-result" class="mt-8"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block bg-accent/10 text-accent font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Liên Hệ</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-semibold text-primary mb-4">
+                        Cần Hỗ Trợ?
+                    </h2>
+                    <p class="text-muted mb-8">
+                        Đội ngũ hỗ trợ của chúng tôi luôn sẵn sàng giải đáp mọi thắc mắc của bạn về dịch vụ công.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-background rounded-formal flex items-center justify-center border border-border">
+                                <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-primary">Hotline</div>
+                                <div class="text-accent font-heading font-semibold text-lg">1900 0000</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-background rounded-formal flex items-center justify-center border border-border">
+                                <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-primary">Email</div>
+                                <div class="text-accent">hotro@dichvucong.gov.vn</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-background rounded-formal flex items-center justify-center border border-border">
+                                <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-primary">Giờ làm việc</div>
+                                <div class="text-muted">24/7 - Hỗ trợ trực tuyến</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-background rounded-formal-lg p-8 shadow-formal-card border border-border">
+                    <h3 class="font-heading text-xl font-semibold text-primary mb-6">Gửi Câu Hỏi</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-primary mb-2">Họ và tên <span class="text-vietred">*</span></label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-formal border border-border bg-white focus:border-accent focus:outline-none transition-colors" placeholder="Nhập họ tên của bạn">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-primary mb-2">Email <span class="text-vietred">*</span></label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-formal border border-border bg-white focus:border-accent focus:outline-none transition-colors" placeholder="email@example.com">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-primary mb-2">Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-formal border border-border bg-white focus:border-accent focus:outline-none transition-colors" placeholder="0123 456 789">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-primary mb-2">Nội dung <span class="text-vietred">*</span></label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-formal border border-border bg-white focus:border-accent focus:outline-none transition-colors resize-none" placeholder="Nhập câu hỏi của bạn..."></textarea>
+                        </div>
+                        <button type="submit" class="formal-button w-full bg-accent text-white font-body font-semibold px-6 py-4 rounded-formal shadow-formal hover:shadow-formal-lg transition-all cursor-pointer flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22,2 15,22 11,13 2,9 22,2"/>
+                            </svg>
+                            Gửi câu hỏi
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12 px-4 sm:px-6 border-t-4 border-gold">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Logo & Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-vietred rounded-formal flex items-center justify-center">
+                            <svg class="w-7 h-7 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-heading font-semibold text-xl uppercase tracking-wide">Cổng Dịch Vụ Công Quốc Gia</span>
+                            <span class="block text-sm text-white/70">Cộng hòa Xã hội Chủ nghĩa Việt Nam</span>
+                        </div>
+                    </div>
+                    <p class="text-white/70 mb-4 max-w-md">
+                        Cổng Dịch Vụ Công Quốc Gia - Nơi kết nối công dân với các dịch vụ hành chính công của Nhà nước Cộng hòa Xã hội Chủ nghĩa Việt Nam.
+                    </p>
+                    <p class="text-white/50 text-sm">
+                        © 2026 Cổng Dịch Vụ Công Quốc Gia
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4 uppercase tracking-wide">Liên Kết Nhanh</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-white/70 hover:text-gold transition-colors cursor-pointer">Dịch vụ công</a></li>
+                        <li><a href="#guide" class="text-white/70 hover:text-gold transition-colors cursor-pointer">Hướng dẫn</a></li>
+                        <li><a href="#tracking" class="text-white/70 hover:text-gold transition-colors cursor-pointer">Tra cứu hồ sơ</a></li>
+                        <li><a href="#contact" class="text-white/70 hover:text-gold transition-colors cursor-pointer">Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal -->
+                <div>
+                    <h4 class="font-heading font-semibold mb-4 uppercase tracking-wide">Pháp Lý</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-white/70 hover:text-gold transition-colors cursor-pointer">Điều khoản sử dụng</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-gold transition-colors cursor-pointer">Chính sách bảo mật</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-gold transition-colors cursor-pointer">Trợ năng (Accessibility)</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-2 text-sm text-white/50">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Số 17 Ngõ Hàng Tre, Hoàn Kiếm, Hà Nội
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="#" aria-label="Facebook" class="w-10 h-10 bg-white/10 rounded-formal flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube" class="w-10 h-10 bg-white/10 rounded-formal flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Zalo" class="w-10 h-10 bg-white/10 rounded-formal flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer">
+                        <span class="font-semibold text-sm">ZL</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/app.js"></script>
+</body>
+</html>

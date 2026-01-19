@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bầu Cử Quốc Hội Khóa XVI & HĐND 2026-2031 - Cổng Dịch Vụ Công Việt Nam</title>
+    <meta name="description" content="Thông tin về bầu cử Đại biểu Quốc hội khóa XVI và Đại biểu HĐND các cấp nhiệm kỳ 2026-2031 - Quyền và nghĩa vụ thiêng liêng của công dân Việt Nam">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23B91C1C'/><polygon points='50,20 58,40 80,40 62,52 70,75 50,60 30,75 38,52 20,40 42,40' fill='%23B8860B'/></svg>">
+    
+    <!-- Google Fonts - Professional Government -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['EB Garamond', 'serif'],
+                        body: ['IBM Plex Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0F172A',
+                        secondary: '#B8860B',
+                        accent: '#0369A1',
+                        background: '#F8FAFC',
+                        surface: '#FFFFFF',
+                        text: '#020617',
+                        muted: '#475569',
+                        success: '#166534',
+                        border: '#E2E8F0',
+                        vietred: '#B91C1C',
+                        gold: '#B8860B',
+                        navy: '#0F172A',
+                        steel: '#334155',
+                    },
+                    boxShadow: {
+                        'formal': '0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -2px rgba(15, 23, 42, 0.1)',
+                        'formal-lg': '0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.1)',
+                        'formal-card': '0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.1)',
+                    },
+                    borderRadius: {
+                        'formal': '8px',
+                        'formal-lg': '12px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        .gov-card {
+            border-left: 4px solid #B91C1C;
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, #B91C1C, #B8860B);
+        }
+        
+        .countdown-item {
+            animation: countPulse 1s ease-in-out infinite alternate;
+        }
+        
+        @keyframes countPulse {
+            from { opacity: 1; }
+            to { opacity: 0.85; }
+        }
+        
+        .formal-button {
+            transition: all 0.15s ease-out;
+        }
+        
+        .formal-button:hover {
+            transform: translateY(-1px);
+        }
+        
+        /* New enhanced styles */
+        .stat-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #B91C1C, #B8860B);
+        }
+        
+        .tab-active {
+            border-bottom: 3px solid #B91C1C;
+            color: #B91C1C;
+        }
+        
+        .calendar-event {
+            border-left: 4px solid;
+            transition: all 0.2s ease;
+        }
+        
+        .calendar-event:hover {
+            transform: translateX(4px);
+        }
+        
+        .calendar-event.milestone { border-color: #0369A1; }
+        .calendar-event.event { border-color: #166534; }
+        .calendar-event.campaign { border-color: #B8860B; }
+        .calendar-event.deadline { border-color: #DC2626; }
+        .calendar-event.election-day { border-color: #B91C1C; background: #FEF2F2; }
+        .calendar-event.result { border-color: #7C3AED; }
+        
+        .faq-item {
+            border: 1px solid #E2E8F0;
+            transition: all 0.2s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: #B91C1C;
+        }
+        
+        .faq-item[open] {
+            border-color: #B91C1C;
+            background: #FEF2F2;
+        }
+        
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+        }
+        
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #E2E8F0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #B91C1C, #B8860B);
+            transition: width 1s ease;
+        }
+        
+        .share-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .share-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .floating-nav {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-slide-in {
+            animation: slideIn 0.5s ease forwards;
+        }
+        
+        .region-chart-bar {
+            height: 24px;
+            background: linear-gradient(90deg, #B91C1C, #DC2626);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+    </style>
+</head>
+<body class="font-body bg-background text-text antialiased">
+    
+    <!-- Top Banner -->
+    <div class="bg-vietred text-white py-2 px-4 text-center text-sm">
+        <span class="font-medium">🗳️ Ngày Bầu cử: Chủ nhật, 24 tháng 5 năm 2026 | Thời gian bỏ phiếu: 07:00 - 21:00</span>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center gap-3 cursor-pointer">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-vietred rounded-formal flex items-center justify-center shadow-formal">
+                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="font-heading font-semibold text-lg text-primary tracking-wide">CỔNG DỊCH VỤ CÔNG</span>
+                        <span class="block text-xs text-muted uppercase tracking-wider">Quốc gia Việt Nam</span>
+                    </div>
+                </a>
+                
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="#check-voter" class="hidden md:flex text-sm text-muted hover:text-accent transition-colors font-medium cursor-pointer items-center gap-1">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                        Tra cứu cử tri
+                    </a>
+                    <a href="#polling-stations" class="hidden md:flex text-sm text-muted hover:text-accent transition-colors font-medium cursor-pointer items-center gap-1">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        Điểm bầu cử
+                    </a>
+                    <a href="#faq" class="hidden lg:flex text-sm text-muted hover:text-accent transition-colors font-medium cursor-pointer items-center gap-1">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                        Hỏi đáp
+                    </a>
+                    <a href="#calendar" class="hidden lg:flex text-sm text-muted hover:text-accent transition-colors font-medium cursor-pointer items-center gap-1">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        Lịch trình
+                    </a>
+                    <a href="/" class="text-accent hover:text-primary transition-colors font-medium cursor-pointer flex items-center gap-2 bg-accent/10 px-3 py-2 rounded-formal">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        <span class="hidden sm:inline">Trang chủ</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-vietred pt-12 pb-20 px-4 sm:px-6 text-white relative overflow-hidden">
+        <!-- Decorative Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-32 h-32">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="text-gold">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                </svg>
+            </div>
+            <div class="absolute bottom-10 right-10 w-48 h-48">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="text-gold">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="max-w-5xl mx-auto text-center relative">
+            <div class="w-20 h-20 bg-gold rounded-formal flex items-center justify-center mx-auto mb-6 shadow-formal-lg">
+                <svg class="w-10 h-10 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                </svg>
+            </div>
+            
+            <p class="uppercase tracking-widest text-gold font-medium mb-3">Cộng hòa Xã hội Chủ nghĩa Việt Nam</p>
+            
+            <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4 leading-tight">
+                Bầu Cử Đại Biểu Quốc Hội Khóa XVI<br>
+                <span class="text-gold">& Đại Biểu HĐND Các Cấp</span>
+            </h1>
+            <p class="text-lg text-white/90 mb-2 font-medium">
+                Nhiệm kỳ 2026 - 2031
+            </p>
+            <p class="text-white/80 max-w-2xl mx-auto">
+                Bầu cử là quyền và nghĩa vụ thiêng liêng của mỗi công dân. Mỗi lá phiếu là một tiếng nói, góp phần xây dựng đất nước ngày càng phồn vinh.
+            </p>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="py-8 px-4 sm:px-6 -mt-12">
+        <div class="max-w-4xl mx-auto">
+            <div id="election-countdown" class="bg-white rounded-formal-lg shadow-formal-card p-6 sm:p-8 border-2 border-gold">
+                <div class="text-center mb-6">
+                    <h2 class="font-heading text-xl sm:text-2xl font-semibold text-primary mb-1">Đếm Ngược Đến Ngày Bầu Cử</h2>
+                    <p id="election-date-display" class="text-accent font-medium"></p>
+                </div>
+                
+                <div class="grid grid-cols-4 gap-3 sm:gap-6 mb-6">
+                    <div class="countdown-item text-center p-3 sm:p-5 bg-vietred/10 rounded-formal border border-vietred/20">
+                        <div id="days" class="font-heading text-3xl sm:text-5xl font-semibold text-vietred">--</div>
+                        <div class="text-xs sm:text-sm text-muted uppercase tracking-wider mt-1">Ngày</div>
+                    </div>
+                    <div class="countdown-item text-center p-3 sm:p-5 bg-vietred/10 rounded-formal border border-vietred/20">
+                        <div id="hours" class="font-heading text-3xl sm:text-5xl font-semibold text-vietred">--</div>
+                        <div class="text-xs sm:text-sm text-muted uppercase tracking-wider mt-1">Giờ</div>
+                    </div>
+                    <div class="countdown-item text-center p-3 sm:p-5 bg-vietred/10 rounded-formal border border-vietred/20">
+                        <div id="minutes" class="font-heading text-3xl sm:text-5xl font-semibold text-vietred">--</div>
+                        <div class="text-xs sm:text-sm text-muted uppercase tracking-wider mt-1">Phút</div>
+                    </div>
+                    <div class="countdown-item text-center p-3 sm:p-5 bg-vietred/10 rounded-formal border border-vietred/20">
+                        <div id="seconds" class="font-heading text-3xl sm:text-5xl font-semibold text-vietred">--</div>
+                        <div class="text-xs sm:text-sm text-muted uppercase tracking-wider mt-1">Giây</div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <p class="text-sm text-muted">Thời gian bỏ phiếu: <strong class="text-primary">07:00 - 21:00</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Statistics Section -->
+    <section class="py-8 px-4 sm:px-6" id="statistics">
+        <div class="max-w-6xl mx-auto">
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="stat-card bg-white rounded-formal-lg p-5 shadow-formal border border-border text-center">
+                    <div class="font-heading text-2xl sm:text-3xl font-semibold text-vietred" id="stat-assembly">500</div>
+                    <div class="text-sm text-muted">Đại biểu Quốc hội</div>
+                </div>
+                <div class="stat-card bg-white rounded-formal-lg p-5 shadow-formal border border-border text-center">
+                    <div class="font-heading text-2xl sm:text-3xl font-semibold text-accent" id="stat-voters">70M+</div>
+                    <div class="text-sm text-muted">Cử tri cả nước</div>
+                </div>
+                <div class="stat-card bg-white rounded-formal-lg p-5 shadow-formal border border-border text-center">
+                    <div class="font-heading text-2xl sm:text-3xl font-semibold text-success" id="stat-stations">85,000+</div>
+                    <div class="text-sm text-muted">Điểm bầu cử</div>
+                </div>
+                <div class="stat-card bg-white rounded-formal-lg p-5 shadow-formal border border-border text-center">
+                    <div class="font-heading text-2xl sm:text-3xl font-semibold text-gold" id="stat-constituencies">184</div>
+                    <div class="text-sm text-muted">Đơn vị bầu cử</div>
+                </div>
+            </div>
+            
+            <!-- Detailed Statistics -->
+            <div class="bg-white rounded-formal-lg shadow-formal-card border border-border overflow-hidden">
+                <div class="p-6 border-b border-border">
+                    <h3 class="font-heading text-xl font-semibold text-primary flex items-center gap-2">
+                        <svg class="w-5 h-5 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 20V10M12 20V4M6 20v-6"/>
+                        </svg>
+                        Thống Kê Chi Tiết Bầu Cử
+                    </h3>
+                </div>
+                <div class="p-6">
+                    <!-- Tabs -->
+                    <div class="flex flex-wrap gap-2 mb-6 border-b border-border">
+                        <button onclick="showStatsTab('overview')" id="tab-overview" class="px-4 py-2 font-medium text-sm tab-active">Tổng quan</button>
+                        <button onclick="showStatsTab('regions')" id="tab-regions" class="px-4 py-2 font-medium text-sm text-muted hover:text-primary">Theo vùng</button>
+                        <button onclick="showStatsTab('demographics')" id="tab-demographics" class="px-4 py-2 font-medium text-sm text-muted hover:text-primary">Nhân khẩu</button>
+                    </div>
+                    
+                    <!-- Tab Content -->
+                    <div id="stats-overview" class="stats-tab-content">
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="p-4 bg-background rounded-formal">
+                                <div class="text-sm text-muted mb-1">Tỷ lệ đăng ký cử tri</div>
+                                <div class="font-heading text-2xl font-semibold text-success" id="stat-registration-rate">99.44%</div>
+                                <div class="progress-bar mt-2">
+                                    <div class="progress-bar-fill" style="width: 99.44%"></div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-background rounded-formal">
+                                <div class="text-sm text-muted mb-1">Tổng số tỉnh/thành</div>
+                                <div class="font-heading text-2xl font-semibold text-accent" id="stat-provinces">63</div>
+                            </div>
+                            <div class="p-4 bg-background rounded-formal">
+                                <div class="text-sm text-muted mb-1">Nhân viên phục vụ</div>
+                                <div class="font-heading text-2xl font-semibold text-gold" id="stat-staff">856,000+</div>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 mt-4">
+                            <div class="p-4 bg-vietred/5 rounded-formal border border-vietred/20">
+                                <div class="text-sm text-muted mb-1">Đại biểu HĐND cấp tỉnh</div>
+                                <div class="font-heading text-xl font-semibold text-vietred" id="stat-provincial">3,842</div>
+                            </div>
+                            <div class="p-4 bg-accent/5 rounded-formal border border-accent/20">
+                                <div class="text-sm text-muted mb-1">Đại biểu HĐND cấp huyện</div>
+                                <div class="font-heading text-xl font-semibold text-accent" id="stat-district">21,945</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="stats-regions" class="stats-tab-content hidden">
+                        <div id="region-chart" class="space-y-3">
+                            <!-- Will be populated dynamically -->
+                        </div>
+                    </div>
+                    
+                    <div id="stats-demographics" class="stats-tab-content hidden">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-medium text-primary mb-4">Giới tính cử tri</h4>
+                                <div class="flex items-center gap-4">
+                                    <div class="flex-1">
+                                        <div class="flex justify-between text-sm mb-1">
+                                            <span>Nam</span>
+                                            <span id="demo-male">48.2%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-bar-fill bg-accent" style="width: 48.2%; background: #0369A1"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between text-sm mb-1">
+                                            <span>Nữ</span>
+                                            <span id="demo-female">51.8%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-bar-fill" style="width: 51.8%; background: #DB2777"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-primary mb-4">Thông tin khác</h4>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center p-3 bg-background rounded-formal">
+                                        <span class="text-sm text-muted">Dân tộc thiểu số</span>
+                                        <span class="font-semibold text-gold" id="demo-ethnic">14.7%</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-background rounded-formal">
+                                        <span class="text-sm text-muted">Cử tri lần đầu (18 tuổi)</span>
+                                        <span class="font-semibold text-success" id="demo-first">8.5%</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-background rounded-formal">
+                                        <span class="text-sm text-muted">Cử tri ở nước ngoài</span>
+                                        <span class="font-semibold text-accent" id="demo-overseas">125,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Election Calendar Section -->
+    <section class="py-12 px-4 sm:px-6 bg-white" id="calendar">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="inline-block bg-accent/10 text-accent font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Lịch Trình</span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary">Lịch Sự Kiện Bầu Cử</h2>
+                <p class="text-muted mt-2">Các mốc thời gian quan trọng trong quá trình bầu cử</p>
+            </div>
+            
+            <div id="election-calendar" class="space-y-4">
+                <!-- Calendar events will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Dates Timeline -->
+    <section class="py-12 px-4 sm:px-6 bg-background">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="inline-block bg-vietred/10 text-vietred font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Mốc Thời Gian</span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary">Các Mốc Thời Gian Quan Trọng</h2>
+            </div>
+            
+            <div id="timeline" class="relative">
+                <!-- Timeline will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Checklist Before Election -->
+    <section class="py-12 px-4 sm:px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="inline-block bg-success/10 text-success font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Chuẩn Bị</span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary">Checklist Trước Ngày Bầu Cử</h2>
+            </div>
+            
+            <div id="checklist" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Checklist items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Vote & Requirements -->
+    <section class="py-12 px-4 sm:px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- How to Vote -->
+                <div class="bg-background rounded-formal-lg p-6 sm:p-8 shadow-formal border border-border gov-card">
+                    <h2 class="font-heading text-xl sm:text-2xl font-semibold text-primary mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-success/10 rounded-formal flex items-center justify-center">
+                            <svg class="w-5 h-5 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,11 12,14 22,4"/>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                            </svg>
+                        </div>
+                        Quy Trình Bỏ Phiếu
+                    </h2>
+                    
+                    <div id="how-to-vote" class="space-y-4">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+
+                <!-- Requirements -->
+                <div class="bg-background rounded-formal-lg p-6 sm:p-8 shadow-formal border border-border gov-card">
+                    <h2 class="font-heading text-xl sm:text-2xl font-semibold text-primary mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-accent/10 rounded-formal flex items-center justify-center">
+                            <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                            </svg>
+                        </div>
+                        Điều Kiện Cử Tri
+                    </h2>
+                    
+                    <div id="requirements" class="space-y-3">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principles & Rights -->
+    <section class="py-12 px-4 sm:px-6 bg-background">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Principles -->
+                <div class="bg-white rounded-formal-lg p-6 sm:p-8 shadow-formal border border-border">
+                    <h2 class="font-heading text-xl sm:text-2xl font-semibold text-primary mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gold/10 rounded-formal flex items-center justify-center">
+                            <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        Nguyên Tắc Bầu Cử
+                    </h2>
+                    
+                    <div id="principles" class="space-y-4">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+
+                <!-- Voter Rights -->
+                <div class="bg-white rounded-formal-lg p-6 sm:p-8 shadow-formal border border-border">
+                    <h2 class="font-heading text-xl sm:text-2xl font-semibold text-primary mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-vietred/10 rounded-formal flex items-center justify-center">
+                            <svg class="w-5 h-5 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        Quyền Của Cử Tri
+                    </h2>
+                    
+                    <div id="voter-rights" class="space-y-3">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Invalid Ballots Warning -->
+    <section class="py-12 px-4 sm:px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-vietred/5 rounded-formal-lg p-6 sm:p-8 border-2 border-vietred/20">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-vietred/10 rounded-formal flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-heading text-xl font-semibold text-primary mb-4">Phiếu Bầu Không Hợp Lệ</h3>
+                        <p class="text-muted mb-4">Các trường hợp phiếu bầu bị coi là không hợp lệ:</p>
+                        <ul id="invalid-ballots" class="space-y-2">
+                            <!-- Dynamic content -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prohibited Actions -->
+    <section class="py-12 px-4 sm:px-6 bg-background">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-formal-lg p-6 sm:p-8 shadow-formal border border-border gov-card">
+                <h3 class="font-heading text-xl font-semibold text-primary mb-6 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-vietred/10 rounded-formal flex items-center justify-center">
+                        <svg class="w-5 h-5 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+                        </svg>
+                    </div>
+                    Các Hành Vi Bị Nghiêm Cấm
+                </h3>
+                <ul id="prohibited-actions" class="grid sm:grid-cols-2 gap-3">
+                    <!-- Dynamic content -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Positions Being Elected -->
+    <section class="py-12 px-4 sm:px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="inline-block bg-accent/10 text-accent font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Chức Danh</span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary">Các Chức Danh Được Bầu</h2>
+            </div>
+            
+            <div id="positions" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Voter Registration Check Section -->
+    <section class="py-12 px-4 sm:px-6 bg-background" id="check-voter">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="inline-block bg-accent/10 text-accent font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Tra Cứu</span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary">Kiểm Tra Danh Sách Cử Tri</h2>
+                <p class="text-muted mt-2">Kiểm tra xem bạn đã có trong danh sách cử tri và biết điểm bầu cử của mình</p>
+            </div>
+            
+            <div class="bg-white rounded-formal-lg p-6 sm:p-8 shadow-formal-card border border-border">
+                <form id="voter-check-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-primary mb-2">Số CCCD/CMND <span class="text-vietred">*</span></label>
+                            <input type="text" id="id-number" placeholder="Nhập số CCCD hoặc CMND" 
+                                   class="w-full px-4 py-3 border border-border rounded-formal focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                                   required maxlength="12">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-primary mb-2">Năm sinh <span class="text-vietred">*</span></label>
+                            <input type="number" id="birth-year" placeholder="VD: 1990" 
+                                   class="w-full px-4 py-3 border border-border rounded-formal focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                                   required min="1900" max="2008">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-primary mb-2">Họ và tên đầy đủ <span class="text-vietred">*</span></label>
+                        <input type="text" id="full-name" placeholder="Nhập họ và tên theo CCCD/CMND" 
+                               class="w-full px-4 py-3 border border-border rounded-formal focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                               required>
+                    </div>
+                    <button type="submit" class="w-full bg-accent text-white font-semibold px-6 py-4 rounded-formal shadow-formal hover:shadow-formal-lg transition-all flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                        Kiểm Tra Ngay
+                    </button>
+                </form>
+                
+                <!-- Result area -->
+                <div id="voter-check-result" class="mt-6 hidden">
+                    <!-- Results will be shown here -->
+                </div>
+            </div>
+            
+            <!-- Demo hint -->
+            <div class="mt-4 p-4 bg-gold/10 rounded-formal border border-gold/20">
+                <p class="text-sm text-muted">
+                    <strong class="text-gold">💡 Demo:</strong> Thử tra cứu với CCCD: <code class="bg-white px-2 py-1 rounded">001234567890</code>, 
+                    Họ tên: <code class="bg-white px-2 py-1 rounded">Nguyễn Văn An</code>, 
+                    Năm sinh: <code class="bg-white px-2 py-1 rounded">1990</code>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Polling Station Lookup -->
+    <section class="py-12 px-4 sm:px-6 bg-white" id="polling-stations">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="inline-block bg-success/10 text-success font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Địa Điểm</span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary">Tra Cứu Điểm Bầu Cử</h2>
+                <p class="text-muted mt-2">Tìm điểm bầu cử gần bạn theo khu vực địa lý</p>
+            </div>
+            
+            <div class="bg-background rounded-formal-lg p-6 sm:p-8 shadow-formal border border-border">
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-primary mb-2">Tỉnh/Thành phố</label>
+                        <select id="province-select" class="w-full px-4 py-3 border border-border rounded-formal focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all bg-white">
+                            <option value="">-- Chọn Tỉnh/TP --</option>
+                            <option value="Thành phố Hà Nội">Thành phố Hà Nội</option>
+                            <option value="Thành phố Hồ Chí Minh">Thành phố Hồ Chí Minh</option>
+                            <option value="Thành phố Đà Nẵng">Thành phố Đà Nẵng</option>
+                            <option value="Thành phố Hải Phòng">Thành phố Hải Phòng</option>
+                            <option value="Thành phố Cần Thơ">Thành phố Cần Thơ</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-primary mb-2">Quận/Huyện</label>
+                        <select id="district-select" class="w-full px-4 py-3 border border-border rounded-formal focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all bg-white">
+                            <option value="">-- Chọn Quận/Huyện --</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-primary mb-2">Phường/Xã</label>
+                        <select id="ward-select" class="w-full px-4 py-3 border border-border rounded-formal focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all bg-white">
+                            <option value="">-- Chọn Phường/Xã --</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="search-polling-btn" class="w-full md:w-auto bg-success text-white font-semibold px-8 py-3 rounded-formal shadow-formal hover:shadow-formal-lg transition-all flex items-center justify-center gap-2 mx-auto">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Tìm Điểm Bầu Cử
+                </button>
+            </div>
+            
+            <!-- Polling stations results -->
+            <div id="polling-stations-results" class="mt-6 grid md:grid-cols-2 gap-4 hidden">
+                <!-- Results will be shown here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Election News Section -->
+    <section class="py-12 px-4 sm:px-6 bg-background">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="inline-block bg-vietred/10 text-vietred font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Tin Tức</span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary">Tin Tức Bầu Cử</h2>
+            </div>
+            
+            <div id="election-news" class="space-y-4">
+                <!-- News will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-12 px-4 sm:px-6 bg-white" id="faq">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="inline-block bg-gold/10 text-gold font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Hỏi Đáp</span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary">Câu Hỏi Thường Gặp</h2>
+                <p class="text-muted mt-2">Giải đáp những thắc mắc phổ biến về bầu cử</p>
+            </div>
+            
+            <!-- FAQ Category Tabs -->
+            <div class="flex flex-wrap gap-2 justify-center mb-8">
+                <button onclick="filterFAQ('all')" class="faq-filter-btn px-4 py-2 rounded-formal text-sm font-medium bg-vietred text-white" data-category="all">Tất cả</button>
+                <button onclick="filterFAQ('general')" class="faq-filter-btn px-4 py-2 rounded-formal text-sm font-medium bg-background text-muted hover:bg-vietred/10" data-category="general">Thông tin chung</button>
+                <button onclick="filterFAQ('voter')" class="faq-filter-btn px-4 py-2 rounded-formal text-sm font-medium bg-background text-muted hover:bg-vietred/10" data-category="voter">Cử tri</button>
+                <button onclick="filterFAQ('procedure')" class="faq-filter-btn px-4 py-2 rounded-formal text-sm font-medium bg-background text-muted hover:bg-vietred/10" data-category="procedure">Quy trình</button>
+                <button onclick="filterFAQ('candidate')" class="faq-filter-btn px-4 py-2 rounded-formal text-sm font-medium bg-background text-muted hover:bg-vietred/10" data-category="candidate">Ứng cử viên</button>
+            </div>
+            
+            <div id="faq-list" class="space-y-3">
+                <!-- FAQ items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback/Report Section -->
+    <section class="py-12 px-4 sm:px-6 bg-background" id="feedback">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="inline-block bg-accent/10 text-accent font-semibold px-4 py-2 rounded-formal text-sm mb-4 uppercase tracking-wider">Phản Ánh</span>
+                <h2 class="font-heading text-2xl sm:text-3xl font-semibold text-primary">Gửi Phản Ánh / Kiến Nghị</h2>
+                <p class="text-muted mt-2">Phản ánh về công tác bầu cử hoặc gửi ý kiến đóng góp</p>
+            </div>
+            
+            <div class="bg-white rounded-formal-lg p-6 sm:p-8 shadow-formal-card border border-border">
+                <form id="feedback-form" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-primary mb-2">Loại phản ánh <span class="text-vietred">*</span></label>
+                        <select id="feedback-type" class="w-full px-4 py-3 border border-border rounded-formal focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all bg-white" required>
+                            <option value="">-- Chọn loại phản ánh --</option>
+                            <option value="voter-list">Danh sách cử tri</option>
+                            <option value="polling-station">Điểm bỏ phiếu</option>
+                            <option value="candidate">Ứng cử viên</option>
+                            <option value="procedure">Quy trình bầu cử</option>
+                            <option value="violation">Báo cáo vi phạm</option>
+                            <option value="suggestion">Góp ý chung</option>
+                            <option value="other">Khác</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-primary mb-2">Tiêu đề <span class="text-vietred">*</span></label>
+                        <input type="text" id="feedback-subject" placeholder="Nhập tiêu đề phản ánh" 
+                               class="w-full px-4 py-3 border border-border rounded-formal focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"
+                               required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-primary mb-2">Nội dung chi tiết <span class="text-vietred">*</span></label>
+                        <textarea id="feedback-description" rows="5" placeholder="Mô tả chi tiết vấn đề bạn muốn phản ánh..." 
+                                  class="w-full px-4 py-3 border border-border rounded-formal focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all resize-none"
+                                  required></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-primary mb-2">Địa điểm (nếu có)</label>
+                        <input type="text" id="feedback-location" placeholder="VD: Khu vực bỏ phiếu số 5, phường X, quận Y" 
+                               class="w-full px-4 py-3 border border-border rounded-formal focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-primary mb-2">Email liên hệ</label>
+                            <input type="email" id="feedback-email" placeholder="email@example.com" 
+                                   class="w-full px-4 py-3 border border-border rounded-formal focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-primary mb-2">Số điện thoại</label>
+                            <input type="tel" id="feedback-phone" placeholder="0912345678" 
+                                   class="w-full px-4 py-3 border border-border rounded-formal focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="feedback-anonymous" class="w-4 h-4 text-accent rounded">
+                        <label for="feedback-anonymous" class="text-sm text-muted">Gửi phản ánh ẩn danh</label>
+                    </div>
+                    <button type="submit" class="w-full bg-accent text-white font-semibold px-6 py-4 rounded-formal shadow-formal hover:shadow-formal-lg transition-all flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"/>
+                            <polygon points="22,2 15,22 11,13 2,9"/>
+                        </svg>
+                        Gửi Phản Ánh
+                    </button>
+                </form>
+                
+                <div id="feedback-result" class="mt-4 hidden">
+                    <!-- Result will be shown here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification Subscription -->
+    <section class="py-12 px-4 sm:px-6 bg-white" id="subscribe">
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-gradient-to-br from-accent to-accent/80 rounded-formal-lg p-6 sm:p-8 text-white shadow-formal-card">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-white/20 rounded-formal flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                    </div>
+                    <h2 class="font-heading text-2xl font-semibold mb-2">Đăng Ký Nhận Thông Báo Bầu Cử</h2>
+                    <p class="text-white/80">Nhận thông tin cập nhật về lịch bầu cử, điểm bỏ phiếu và các thông báo quan trọng</p>
+                </div>
+                
+                <form id="subscribe-form" class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <input type="text" id="sub-name" placeholder="Họ và tên" 
+                                   class="w-full px-4 py-3 rounded-formal bg-white/10 border border-white/20 text-white placeholder-white/60 focus:bg-white/20 focus:outline-none transition-all">
+                        </div>
+                        <div>
+                            <input type="tel" id="sub-phone" placeholder="Số điện thoại" 
+                                   class="w-full px-4 py-3 rounded-formal bg-white/10 border border-white/20 text-white placeholder-white/60 focus:bg-white/20 focus:outline-none transition-all">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="email" id="sub-email" placeholder="Email của bạn" required
+                               class="w-full px-4 py-3 rounded-formal bg-white/10 border border-white/20 text-white placeholder-white/60 focus:bg-white/20 focus:outline-none transition-all">
+                    </div>
+                    <button type="submit" class="w-full bg-white text-accent font-semibold px-6 py-4 rounded-formal shadow-formal hover:shadow-formal-lg transition-all flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22,4 12,14.01 9,11.01"/>
+                        </svg>
+                        Đăng Ký Nhận Thông Báo
+                    </button>
+                </form>
+                
+                <div id="subscribe-result" class="mt-4 hidden">
+                    <!-- Result will be shown here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Share Section -->
+    <section class="py-8 px-4 sm:px-6 bg-background">
+        <div class="max-w-3xl mx-auto text-center">
+            <h3 class="font-heading text-lg font-semibold text-primary mb-4">Chia Sẻ Thông Tin Bầu Cử</h3>
+            <p class="text-muted text-sm mb-6">Giúp lan tỏa thông tin bầu cử đến nhiều người hơn</p>
+            <div class="flex justify-center gap-4">
+                <button onclick="shareOnFacebook()" class="share-btn w-12 h-12 bg-blue-600 text-white rounded-formal flex items-center justify-center shadow-formal hover:shadow-formal-lg">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
+                    </svg>
+                </button>
+                <button onclick="shareOnTwitter()" class="share-btn w-12 h-12 bg-black text-white rounded-formal flex items-center justify-center shadow-formal hover:shadow-formal-lg">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </button>
+                <button onclick="shareOnZalo()" class="share-btn w-12 h-12 bg-blue-500 text-white rounded-formal flex items-center justify-center shadow-formal hover:shadow-formal-lg">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 14.634c-.054.168-.18.306-.342.378-.054.024-.114.042-.174.054l-1.668.33c-.156.03-.312-.024-.426-.138l-.552-.558c-.108-.114-.27-.15-.414-.096l-2.31.87c-.168.06-.348-.006-.444-.162l-.972-1.566c-.09-.144-.27-.198-.426-.138l-2.082.804c-.168.066-.36.006-.456-.144l-.846-1.344c-.096-.15-.066-.348.072-.462l4.296-3.558c.126-.102.294-.114.432-.024l2.568 1.602c.132.084.306.066.42-.042l1.74-1.602c.126-.114.306-.126.444-.024l.582.438c.138.102.18.288.102.438z"/>
+                    </svg>
+                </button>
+                <button onclick="copyLink()" class="share-btn w-12 h-12 bg-gray-600 text-white rounded-formal flex items-center justify-center shadow-formal hover:shadow-formal-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 px-4 sm:px-6 bg-vietred text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="w-16 h-16 bg-gold rounded-formal flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22,4 12,14.01 9,11.01"/>
+                </svg>
+            </div>
+            <h2 class="font-heading text-2xl sm:text-3xl font-semibold mb-4">
+                Hãy Thực Hiện Quyền Công Dân Của Bạn
+            </h2>
+            <p class="text-white/90 mb-8 max-w-2xl mx-auto">
+                Mỗi lá phiếu của bạn đều có ý nghĩa quan trọng trong việc lựa chọn những người đại diện xứng đáng cho nhân dân, góp phần xây dựng Nhà nước pháp quyền xã hội chủ nghĩa của Nhân dân, do Nhân dân, vì Nhân dân.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/" class="formal-button inline-flex items-center justify-center gap-2 bg-white text-vietred font-body font-semibold px-8 py-4 rounded-formal shadow-formal hover:shadow-formal-lg cursor-pointer">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                    Về Trang Chủ
+                </a>
+                <a href="/#services" class="formal-button inline-flex items-center justify-center gap-2 bg-gold text-primary font-body font-semibold px-8 py-4 rounded-formal shadow-formal hover:shadow-formal-lg cursor-pointer">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"/>
+                        <rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/>
+                        <rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                    Dịch Vụ Công
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Navigation -->
+    <div class="floating-nav hidden sm:block">
+        <div class="flex flex-col gap-2">
+            <a href="#check-voter" class="w-12 h-12 bg-accent text-white rounded-formal flex items-center justify-center shadow-formal-lg hover:scale-110 transition-transform" title="Tra cứu cử tri">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+            </a>
+            <a href="#faq" class="w-12 h-12 bg-gold text-white rounded-formal flex items-center justify-center shadow-formal-lg hover:scale-110 transition-transform" title="Hỏi đáp">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+            </a>
+            <button onclick="scrollToTop()" class="w-12 h-12 bg-vietred text-white rounded-formal flex items-center justify-center shadow-formal-lg hover:scale-110 transition-transform" title="Lên đầu trang">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 15l-6-6-6 6"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8 px-4 sm:px-6 border-t-4 border-gold">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-vietred rounded-formal flex items-center justify-center">
+                    <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                </div>
+                <span class="font-heading font-semibold text-lg">Cổng Dịch Vụ Công Quốc Gia</span>
+            </div>
+            <p class="text-white/70 text-sm">© 2026 Cổng Dịch Vụ Công Quốc Gia - Nước Cộng hòa Xã hội Chủ nghĩa Việt Nam</p>
+            <p class="text-white/50 text-xs mt-2">Độc lập - Tự do - Hạnh phúc</p>
+        </div>
+    </footer>
+
+    <script>
+        const API_BASE = window.location.origin;
+
+        // Countdown timer
+        let countdownInterval;
+
+        function updateCountdown(targetDate) {
+            const now = new Date().getTime();
+            // Set target to 7:00 AM on election day
+            const target = new Date(targetDate + 'T07:00:00').getTime();
+            const distance = target - now;
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '0';
+                document.getElementById('hours').textContent = '0';
+                document.getElementById('minutes').textContent = '0';
+                document.getElementById('seconds').textContent = '0';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Format date to Vietnamese
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('vi-VN', options);
+        }
+
+        // Get status class for timeline
+        function getTimelineStatusClass(status) {
+            switch(status) {
+                case 'completed': return 'bg-success text-white';
+                case 'upcoming': return 'bg-accent text-white';
+                case 'election-day': return 'bg-vietred text-white';
+                default: return 'bg-steel/20 text-steel';
+            }
+        }
+
+        // Show toast notification
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            const bgColor = type === 'success' ? 'bg-success' : type === 'error' ? 'bg-vietred' : 'bg-accent';
+            toast.className = `fixed bottom-4 right-4 ${bgColor} text-white px-6 py-4 rounded-formal shadow-formal-lg z-50 animate-pulse`;
+            toast.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        ${type === 'success' ? '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/>' : 
+                          type === 'error' ? '<circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>' :
+                          '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>'}
+                    </svg>
+                    <span>${message}</span>
+                </div>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 4000);
+        }
+
+        // Load election data
+        async function loadElectionData() {
+            try {
+                const response = await fetch(`${API_BASE}/api/elections`);
+                const result = await response.json();
+
+                if (result.success) {
+                    const data = result.data;
+                    const upcoming = data.upcoming[0];
+                    const info = data.info;
+
+                    if (upcoming) {
+                        // Update countdown
+                        document.getElementById('election-date-display').textContent = formatDate(upcoming.date);
+                        updateCountdown(upcoming.date);
+                        countdownInterval = setInterval(() => updateCountdown(upcoming.date), 1000);
+
+                        // Render Timeline
+                        if (upcoming.importantDates) {
+                            const timelineEl = document.getElementById('timeline');
+                            timelineEl.innerHTML = `
+                                <div class="space-y-4">
+                                    ${upcoming.importantDates.map((item, index) => `
+                                        <div class="flex items-start gap-4">
+                                            <div class="flex-shrink-0 w-24 text-right">
+                                                <span class="text-sm font-medium text-muted">${formatDate(item.date).split(',')[1] || formatDate(item.date)}</span>
+                                            </div>
+                                            <div class="flex-shrink-0 w-4 h-4 rounded-full ${getTimelineStatusClass(item.status)} mt-1"></div>
+                                            <div class="flex-1 pb-4 ${index < upcoming.importantDates.length - 1 ? 'border-b border-border' : ''}">
+                                                <p class="font-medium text-primary ${item.status === 'election-day' ? 'text-vietred font-semibold text-lg' : ''}">${item.event}</p>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            `;
+                        }
+
+                        // Render Requirements
+                        const reqEl = document.getElementById('requirements');
+                        reqEl.innerHTML = upcoming.requirements.map(req => `
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9,11 12,14 22,4"/>
+                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                                </svg>
+                                <span class="text-text">${req}</span>
+                            </div>
+                        `).join('');
+
+                        // Render Positions
+                        if (upcoming.positions) {
+                            const posEl = document.getElementById('positions');
+                            posEl.innerHTML = upcoming.positions.map(pos => `
+                                <div class="bg-background rounded-formal-lg p-5 border border-border text-center">
+                                    <div class="font-heading text-2xl font-semibold text-vietred mb-2">${pos.quantity}</div>
+                                    <div class="text-sm text-primary font-medium">${pos.name}</div>
+                                    <div class="text-xs text-muted mt-1">Nhiệm kỳ ${pos.term}</div>
+                                </div>
+                            `).join('');
+                        }
+                    }
+
+                    if (info) {
+                        // Render How to Vote
+                        if (info.howToVote) {
+                            const howToEl = document.getElementById('how-to-vote');
+                            howToEl.innerHTML = info.howToVote.map((step, index) => `
+                                <div class="flex items-start gap-4">
+                                    <div class="w-8 h-8 bg-vietred text-white rounded-formal flex items-center justify-center flex-shrink-0 font-semibold text-sm">
+                                        ${index + 1}
+                                    </div>
+                                    <p class="text-text pt-1">${step}</p>
+                                </div>
+                            `).join('');
+                        }
+
+                        // Render Principles
+                        if (info.principles) {
+                            const principlesEl = document.getElementById('principles');
+                            principlesEl.innerHTML = info.principles.map(principle => `
+                                <div class="flex items-start gap-3 p-3 bg-gold/5 rounded-formal border border-gold/20">
+                                    <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                    </svg>
+                                    <span class="text-text">${principle}</span>
+                                </div>
+                            `).join('');
+                        }
+
+                        // Render Voter Rights
+                        if (info.voterRights) {
+                            const rightsEl = document.getElementById('voter-rights');
+                            rightsEl.innerHTML = info.voterRights.map(right => `
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-vietred flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    </svg>
+                                    <span class="text-text">${right}</span>
+                                </div>
+                            `).join('');
+                        }
+
+                        // Render Invalid Ballots
+                        if (info.invalidBallots) {
+                            const invalidEl = document.getElementById('invalid-ballots');
+                            invalidEl.innerHTML = info.invalidBallots.map(item => `
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-5 h-5 text-vietred flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <line x1="15" y1="9" x2="9" y2="15"/>
+                                        <line x1="9" y1="9" x2="15" y2="15"/>
+                                    </svg>
+                                    <span class="text-text">${item}</span>
+                                </li>
+                            `).join('');
+                        }
+
+                        // Render Prohibited Actions
+                        if (info.prohibitedActions) {
+                            const prohibitedEl = document.getElementById('prohibited-actions');
+                            prohibitedEl.innerHTML = info.prohibitedActions.map(action => `
+                                <li class="flex items-start gap-2 p-3 bg-vietred/5 rounded-formal">
+                                    <svg class="w-5 h-5 text-vietred flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+                                    </svg>
+                                    <span class="text-text text-sm">${action}</span>
+                                </li>
+                            `).join('');
+                        }
+                    }
+
+                    // Load checklist from data root
+                    if (data.checklistBeforeElection) {
+                        const checklistEl = document.getElementById('checklist');
+                        checklistEl.innerHTML = data.checklistBeforeElection.map((item, index) => `
+                            <div class="bg-white rounded-formal-lg p-5 shadow-formal border border-border gov-card">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-success/10 text-success rounded-formal flex items-center justify-center flex-shrink-0 font-semibold text-sm">
+                                        ${index + 1}
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="font-medium text-primary mb-1">${item.task}</h4>
+                                        <p class="text-sm text-muted mb-1"><strong>Hạn:</strong> ${item.deadline}</p>
+                                        <p class="text-sm text-muted"><strong>Nơi:</strong> ${item.where}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('');
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading election data:', error);
+            }
+        }
+
+        // Load election news
+        async function loadElectionNews() {
+            try {
+                const response = await fetch(`${API_BASE}/api/elections/news?limit=5`);
+                const result = await response.json();
+
+                if (result.success && result.data.length > 0) {
+                    const newsEl = document.getElementById('election-news');
+                    newsEl.innerHTML = result.data.map(item => `
+                        <div class="bg-white rounded-formal-lg p-5 shadow-formal border border-border ${item.important ? 'border-l-4 border-l-vietred' : ''}">
+                            <div class="flex items-start justify-between gap-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="text-xs font-medium px-2 py-1 rounded ${item.important ? 'bg-vietred/10 text-vietred' : 'bg-accent/10 text-accent'}">${item.category}</span>
+                                        <span class="text-xs text-muted">${formatDate(item.date)}</span>
+                                    </div>
+                                    <h3 class="font-heading text-lg font-semibold text-primary mb-2">${item.title}</h3>
+                                    <p class="text-muted text-sm">${item.summary}</p>
+                                </div>
+                                ${item.important ? `
+                                <div class="flex-shrink-0">
+                                    <span class="inline-flex items-center gap-1 text-vietred text-xs font-medium">
+                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                        </svg>
+                                        Quan trọng
+                                    </span>
+                                </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Error loading election news:', error);
+            }
+        }
+
+        // Voter check form
+        document.getElementById('voter-check-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const idNumber = document.getElementById('id-number').value.trim();
+            const fullName = document.getElementById('full-name').value.trim();
+            const birthYear = document.getElementById('birth-year').value.trim();
+            
+            const resultEl = document.getElementById('voter-check-result');
+            resultEl.classList.remove('hidden');
+            resultEl.innerHTML = `
+                <div class="text-center py-4">
+                    <div class="animate-spin w-8 h-8 border-4 border-accent border-t-transparent rounded-full mx-auto"></div>
+                    <p class="text-muted mt-2">Đang kiểm tra...</p>
+                </div>
+            `;
+
+            try {
+                const response = await fetch(`${API_BASE}/api/elections/check-voter`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ idNumber, fullName, birthYear })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    if (result.data.registered) {
+                        const voter = result.data.voter;
+                        resultEl.innerHTML = `
+                            <div class="bg-success/10 border border-success/30 rounded-formal-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-12 h-12 bg-success rounded-formal flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <polyline points="22,4 12,14.01 9,11.01"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-success text-lg">Đã có trong danh sách cử tri</h4>
+                                        <p class="text-muted text-sm">Bạn đủ điều kiện tham gia bầu cử</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid md:grid-cols-2 gap-4 mt-4">
+                                    <div class="bg-white rounded-formal p-4">
+                                        <h5 class="font-medium text-primary mb-2">Thông tin cử tri</h5>
+                                        <p class="text-sm text-muted"><strong>Họ tên:</strong> ${voter.fullName}</p>
+                                        <p class="text-sm text-muted"><strong>Số thứ tự:</strong> ${voter.pollingStation.voterNumber}</p>
+                                        <p class="text-sm text-muted"><strong>Đơn vị bầu cử:</strong> ${voter.pollingStation.constituency}</p>
+                                    </div>
+                                    <div class="bg-white rounded-formal p-4">
+                                        <h5 class="font-medium text-primary mb-2">Điểm bỏ phiếu</h5>
+                                        <p class="text-sm text-muted"><strong>Khu vực:</strong> ${voter.pollingStation.name}</p>
+                                        <p class="text-sm text-muted"><strong>Địa chỉ:</strong> ${voter.pollingStation.address}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4 p-3 bg-gold/10 rounded-formal border border-gold/20">
+                                    <p class="text-sm text-muted">
+                                        <strong class="text-gold">📌 Lưu ý:</strong> Hãy mang theo CCCD/CMND và Thẻ cử tri khi đến điểm bỏ phiếu vào ngày 24/05/2026 (07:00 - 21:00).
+                                    </p>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        resultEl.innerHTML = `
+                            <div class="bg-vietred/10 border border-vietred/30 rounded-formal-lg p-6">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-12 h-12 bg-vietred rounded-formal flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <line x1="12" y1="8" x2="12" y2="12"/>
+                                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-vietred text-lg">Chưa có trong danh sách</h4>
+                                        <p class="text-muted text-sm">${result.data.reason}</p>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-formal p-4 mt-4">
+                                    <p class="text-sm text-muted"><strong>Hướng dẫn:</strong> ${result.data.suggestion}</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+                } else {
+                    resultEl.innerHTML = `
+                        <div class="bg-vietred/10 border border-vietred/30 rounded-formal p-4 text-center">
+                            <p class="text-vietred">${result.message || 'Có lỗi xảy ra'}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultEl.innerHTML = `
+                    <div class="bg-vietred/10 border border-vietred/30 rounded-formal p-4 text-center">
+                        <p class="text-vietred">Không thể kết nối đến máy chủ. Vui lòng thử lại sau.</p>
+                    </div>
+                `;
+            }
+        });
+
+        // Location data for dropdowns
+        const locationData = {
+            'Thành phố Hà Nội': {
+                districts: ['Quận Hoàn Kiếm', 'Quận Ba Đình', 'Quận Đống Đa', 'Quận Hai Bà Trưng', 'Quận Cầu Giấy'],
+                wards: {
+                    'Quận Hoàn Kiếm': ['Phường Hàng Bạc', 'Phường Hàng Bông', 'Phường Hàng Đào', 'Phường Hàng Gai'],
+                    'Quận Ba Đình': ['Phường Cống Vị', 'Phường Điện Biên', 'Phường Kim Mã', 'Phường Ngọc Hà'],
+                    'Quận Đống Đa': ['Phường Cát Linh', 'Phường Hàng Bột', 'Phường Kim Liên', 'Phường Láng Hạ'],
+                    'Quận Hai Bà Trưng': ['Phường Bạch Đằng', 'Phường Bạch Mai', 'Phường Đồng Tâm'],
+                    'Quận Cầu Giấy': ['Phường Dịch Vọng', 'Phường Mai Dịch', 'Phường Nghĩa Đô']
+                }
+            },
+            'Thành phố Hồ Chí Minh': {
+                districts: ['Quận 1', 'Quận 3', 'Quận Phú Nhuận', 'Quận Bình Thạnh', 'Quận Tân Bình'],
+                wards: {
+                    'Quận 1': ['Phường Bến Nghé', 'Phường Bến Thành', 'Phường Cầu Kho', 'Phường Đa Kao'],
+                    'Quận 3': ['Phường 1', 'Phường 2', 'Phường 3', 'Phường 10'],
+                    'Quận Phú Nhuận': ['Phường 1', 'Phường 2', 'Phường 7', 'Phường 8'],
+                    'Quận Bình Thạnh': ['Phường 1', 'Phường 2', 'Phường 3', 'Phường 11'],
+                    'Quận Tân Bình': ['Phường 1', 'Phường 2', 'Phường 3', 'Phường 4']
+                }
+            },
+            'Thành phố Đà Nẵng': {
+                districts: ['Quận Hải Châu', 'Quận Thanh Khê', 'Quận Sơn Trà', 'Quận Ngũ Hành Sơn'],
+                wards: {
+                    'Quận Hải Châu': ['Phường Hải Châu 1', 'Phường Hải Châu 2', 'Phường Thanh Bình'],
+                    'Quận Thanh Khê': ['Phường An Khê', 'Phường Chính Gián', 'Phường Hòa Khê'],
+                    'Quận Sơn Trà': ['Phường An Hải Bắc', 'Phường An Hải Đông', 'Phường Mân Thái'],
+                    'Quận Ngũ Hành Sơn': ['Phường Hòa Hải', 'Phường Hòa Quý', 'Phường Khuê Mỹ']
+                }
+            }
+        };
+
+        // Province change handler
+        document.getElementById('province-select').addEventListener('change', function() {
+            const province = this.value;
+            const districtSelect = document.getElementById('district-select');
+            const wardSelect = document.getElementById('ward-select');
+            
+            districtSelect.innerHTML = '<option value="">-- Chọn Quận/Huyện --</option>';
+            wardSelect.innerHTML = '<option value="">-- Chọn Phường/Xã --</option>';
+            
+            if (province && locationData[province]) {
+                locationData[province].districts.forEach(d => {
+                    districtSelect.innerHTML += `<option value="${d}">${d}</option>`;
+                });
+            }
+        });
+
+        // District change handler
+        document.getElementById('district-select').addEventListener('change', function() {
+            const province = document.getElementById('province-select').value;
+            const district = this.value;
+            const wardSelect = document.getElementById('ward-select');
+            
+            wardSelect.innerHTML = '<option value="">-- Chọn Phường/Xã --</option>';
+            
+            if (province && district && locationData[province] && locationData[province].wards[district]) {
+                locationData[province].wards[district].forEach(w => {
+                    wardSelect.innerHTML += `<option value="${w}">${w}</option>`;
+                });
+            }
+        });
+
+        // Search polling stations
+        document.getElementById('search-polling-btn').addEventListener('click', async () => {
+            const province = document.getElementById('province-select').value;
+            const district = document.getElementById('district-select').value;
+            const ward = document.getElementById('ward-select').value;
+            
+            const resultsEl = document.getElementById('polling-stations-results');
+            resultsEl.classList.remove('hidden');
+            resultsEl.innerHTML = `
+                <div class="col-span-2 text-center py-8">
+                    <div class="animate-spin w-8 h-8 border-4 border-success border-t-transparent rounded-full mx-auto"></div>
+                    <p class="text-muted mt-2">Đang tìm kiếm...</p>
+                </div>
+            `;
+
+            try {
+                const params = new URLSearchParams();
+                if (province) params.append('province', province);
+                if (district) params.append('district', district);
+                if (ward) params.append('ward', ward);
+                
+                const response = await fetch(`${API_BASE}/api/elections/polling-stations?${params.toString()}`);
+                const result = await response.json();
+                
+                if (result.success && result.data.length > 0) {
+                    resultsEl.innerHTML = result.data.map(station => `
+                        <div class="bg-white rounded-formal-lg p-5 shadow-formal border border-border">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 bg-success/10 rounded-formal flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-primary">${station.name}</h4>
+                                    <p class="text-sm text-muted mt-1">${station.address}</p>
+                                    <div class="flex flex-wrap gap-2 mt-3">
+                                        <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">⏰ ${station.openTime} - ${station.closeTime}</span>
+                                        <span class="text-xs bg-gold/10 text-gold px-2 py-1 rounded">👥 Sức chứa: ${station.capacity}</span>
+                                    </div>
+                                    ${station.phone ? `<p class="text-xs text-muted mt-2">📞 ${station.phone}</p>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    resultsEl.innerHTML = `
+                        <div class="col-span-2 text-center py-8 bg-white rounded-formal-lg">
+                            <svg class="w-12 h-12 text-muted mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <p class="text-muted">Không tìm thấy điểm bầu cử nào.</p>
+                            <p class="text-sm text-muted mt-1">Vui lòng thử chọn khu vực khác hoặc liên hệ UBND địa phương.</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultsEl.innerHTML = `
+                    <div class="col-span-2 text-center py-8 bg-vietred/10 rounded-formal-lg">
+                        <p class="text-vietred">Không thể tải dữ liệu. Vui lòng thử lại sau.</p>
+                    </div>
+                `;
+            }
+        });
+
+        // Subscribe form
+        document.getElementById('subscribe-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('sub-name').value.trim();
+            const email = document.getElementById('sub-email').value.trim();
+            const phone = document.getElementById('sub-phone').value.trim();
+            
+            const resultEl = document.getElementById('subscribe-result');
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/elections/subscribe`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, phone })
+                });
+                
+                const result = await response.json();
+                
+                resultEl.classList.remove('hidden');
+                
+                if (result.success) {
+                    resultEl.innerHTML = `
+                        <div class="bg-white/20 rounded-formal p-4 text-center">
+                            <svg class="w-8 h-8 text-white mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22,4 12,14.01 9,11.01"/>
+                            </svg>
+                            <p class="text-white font-medium">${result.message}</p>
+                            <p class="text-white/70 text-sm mt-1">Mã đăng ký: ${result.data.subscriptionId}</p>
+                        </div>
+                    `;
+                    e.target.reset();
+                    showToast('Đăng ký thành công!', 'success');
+                } else {
+                    resultEl.innerHTML = `
+                        <div class="bg-vietred/30 rounded-formal p-4 text-center">
+                            <p class="text-white">${result.message}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultEl.classList.remove('hidden');
+                resultEl.innerHTML = `
+                    <div class="bg-vietred/30 rounded-formal p-4 text-center">
+                        <p class="text-white">Không thể kết nối. Vui lòng thử lại sau.</p>
+                    </div>
+                `;
+            }
+        });
+
+        // ===================== NEW FEATURES =====================
+
+        // Load election statistics
+        async function loadElectionStatistics() {
+            try {
+                const response = await fetch(`${API_BASE}/api/elections/statistics`);
+                const result = await response.json();
+
+                if (result.success) {
+                    const stats = result.data;
+                    
+                    // Update quick stats
+                    document.getElementById('stat-assembly').textContent = stats.nationalAssemblySeats.toLocaleString();
+                    document.getElementById('stat-voters').textContent = (stats.totalVoters / 1000000).toFixed(1) + 'M+';
+                    document.getElementById('stat-stations').textContent = stats.pollingStations.toLocaleString() + '+';
+                    document.getElementById('stat-constituencies').textContent = stats.totalConstituencies;
+                    
+                    // Update detailed stats
+                    document.getElementById('stat-registration-rate').textContent = stats.registrationRate + '%';
+                    document.getElementById('stat-provinces').textContent = stats.provinces;
+                    document.getElementById('stat-staff').textContent = stats.volunteerStaff.toLocaleString() + '+';
+                    document.getElementById('stat-provincial').textContent = stats.provincialCouncilSeats.toLocaleString();
+                    document.getElementById('stat-district').textContent = stats.districtCouncilSeats.toLocaleString();
+                    
+                    // Demographics
+                    document.getElementById('demo-male').textContent = stats.demographics.male + '%';
+                    document.getElementById('demo-female').textContent = stats.demographics.female + '%';
+                    document.getElementById('demo-ethnic').textContent = stats.demographics.ethnicMinorities + '%';
+                    document.getElementById('demo-first').textContent = stats.demographics.firstTimeVoters + '%';
+                    document.getElementById('demo-overseas').textContent = stats.demographics.overseasVoters.toLocaleString();
+                    
+                    // Render region chart
+                    const regionChartEl = document.getElementById('region-chart');
+                    const maxVoters = Math.max(...stats.byRegion.map(r => r.voters));
+                    regionChartEl.innerHTML = stats.byRegion.map(region => `
+                        <div class="flex items-center gap-4">
+                            <div class="w-32 text-sm text-muted text-right">${region.region}</div>
+                            <div class="flex-1">
+                                <div class="region-chart-bar" style="width: ${(region.voters / maxVoters) * 100}%"></div>
+                            </div>
+                            <div class="w-20 text-sm font-medium text-primary">${region.percentage}%</div>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Error loading election statistics:', error);
+            }
+        }
+
+        // Stats tab switching
+        function showStatsTab(tabName) {
+            // Hide all tab content
+            document.querySelectorAll('.stats-tab-content').forEach(el => el.classList.add('hidden'));
+            // Show selected tab
+            document.getElementById(`stats-${tabName}`).classList.remove('hidden');
+            
+            // Update tab buttons
+            document.querySelectorAll('[id^="tab-"]').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('text-muted');
+            });
+            document.getElementById(`tab-${tabName}`).classList.add('tab-active');
+            document.getElementById(`tab-${tabName}`).classList.remove('text-muted');
+        }
+
+        // Load election calendar
+        async function loadElectionCalendar() {
+            try {
+                const response = await fetch(`${API_BASE}/api/elections/calendar`);
+                const result = await response.json();
+
+                if (result.success) {
+                    const calendarEl = document.getElementById('election-calendar');
+                    calendarEl.innerHTML = result.data.map(event => `
+                        <div class="calendar-event ${event.type} bg-white rounded-formal-lg p-5 shadow-formal">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 text-center min-w-[60px]">
+                                    <div class="text-2xl font-heading font-semibold ${event.type === 'election-day' ? 'text-vietred' : 'text-primary'}">
+                                        ${new Date(event.date).getDate()}
+                                    </div>
+                                    <div class="text-xs text-muted uppercase">
+                                        Tháng ${new Date(event.date).getMonth() + 1}
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold ${event.type === 'election-day' ? 'text-vietred text-lg' : 'text-primary'}">${event.title}</h4>
+                                    <p class="text-sm text-muted mt-1">${event.description}</p>
+                                    <div class="flex flex-wrap gap-2 mt-3">
+                                        <span class="text-xs bg-background px-2 py-1 rounded">📍 ${event.location}</span>
+                                        ${event.time ? `<span class="text-xs bg-background px-2 py-1 rounded">⏰ ${event.time}</span>` : ''}
+                                        ${event.endDate ? `<span class="text-xs bg-background px-2 py-1 rounded">📅 Đến ${formatDate(event.endDate).split(',')[1] || formatDate(event.endDate)}</span>` : ''}
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <span class="text-xs px-2 py-1 rounded ${
+                                        event.type === 'election-day' ? 'bg-vietred text-white' :
+                                        event.type === 'deadline' ? 'bg-red-100 text-red-700' :
+                                        event.type === 'milestone' ? 'bg-accent/10 text-accent' :
+                                        event.type === 'campaign' ? 'bg-gold/10 text-gold' :
+                                        'bg-success/10 text-success'
+                                    }">${
+                                        event.type === 'election-day' ? 'NGÀY BẦU CỬ' :
+                                        event.type === 'deadline' ? 'Hạn chót' :
+                                        event.type === 'milestone' ? 'Mốc quan trọng' :
+                                        event.type === 'campaign' ? 'Vận động' :
+                                        event.type === 'result' ? 'Kết quả' : 'Sự kiện'
+                                    }</span>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Error loading election calendar:', error);
+            }
+        }
+
+        // Load FAQ
+        let allFAQ = [];
+        async function loadFAQ() {
+            try {
+                const response = await fetch(`${API_BASE}/api/elections/faq`);
+                const result = await response.json();
+
+                if (result.success) {
+                    allFAQ = result.data;
+                    renderFAQ(allFAQ);
+                }
+            } catch (error) {
+                console.error('Error loading FAQ:', error);
+            }
+        }
+
+        function renderFAQ(faqItems) {
+            const faqListEl = document.getElementById('faq-list');
+            faqListEl.innerHTML = faqItems.map(item => `
+                <details class="faq-item rounded-formal-lg overflow-hidden" data-category="${item.category}">
+                    <summary class="p-5 bg-white flex items-center justify-between gap-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-vietred/10 rounded-formal flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                </svg>
+                            </div>
+                            <span class="font-medium text-primary">${item.question}</span>
+                        </div>
+                        <svg class="w-5 h-5 text-muted flex-shrink-0 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </summary>
+                    <div class="p-5 pt-0 bg-white border-t border-border">
+                        <p class="text-muted ml-11">${item.answer}</p>
+                        <div class="flex items-center gap-2 mt-3 ml-11">
+                            <span class="text-xs text-muted">👁 ${item.views.toLocaleString()} lượt xem</span>
+                        </div>
+                    </div>
+                </details>
+            `).join('');
+        }
+
+        function filterFAQ(category) {
+            // Update filter buttons
+            document.querySelectorAll('.faq-filter-btn').forEach(btn => {
+                if (btn.dataset.category === category) {
+                    btn.classList.remove('bg-background', 'text-muted');
+                    btn.classList.add('bg-vietred', 'text-white');
+                } else {
+                    btn.classList.add('bg-background', 'text-muted');
+                    btn.classList.remove('bg-vietred', 'text-white');
+                }
+            });
+            
+            // Filter and render
+            if (category === 'all') {
+                renderFAQ(allFAQ);
+            } else {
+                renderFAQ(allFAQ.filter(item => item.category === category));
+            }
+        }
+
+        // Feedback form handler
+        document.getElementById('feedback-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const type = document.getElementById('feedback-type').value;
+            const subject = document.getElementById('feedback-subject').value.trim();
+            const description = document.getElementById('feedback-description').value.trim();
+            const location = document.getElementById('feedback-location').value.trim();
+            const contactEmail = document.getElementById('feedback-email').value.trim();
+            const contactPhone = document.getElementById('feedback-phone').value.trim();
+            const anonymous = document.getElementById('feedback-anonymous').checked;
+            
+            const resultEl = document.getElementById('feedback-result');
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/elections/feedback`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ type, subject, description, location, contactEmail, contactPhone, anonymous })
+                });
+                
+                const result = await response.json();
+                
+                resultEl.classList.remove('hidden');
+                
+                if (result.success) {
+                    resultEl.innerHTML = `
+                        <div class="bg-success/10 border border-success/30 rounded-formal p-4">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-6 h-6 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22,4 12,14.01 9,11.01"/>
+                                </svg>
+                                <div>
+                                    <p class="font-medium text-success">${result.message}</p>
+                                    <p class="text-sm text-muted mt-1">Mã phản ánh: <strong>${result.data.ticketCode}</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    e.target.reset();
+                    showToast('Gửi phản ánh thành công!', 'success');
+                } else {
+                    resultEl.innerHTML = `
+                        <div class="bg-vietred/10 border border-vietred/30 rounded-formal p-4 text-center">
+                            <p class="text-vietred">${result.message}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultEl.classList.remove('hidden');
+                resultEl.innerHTML = `
+                    <div class="bg-vietred/10 border border-vietred/30 rounded-formal p-4 text-center">
+                        <p class="text-vietred">Không thể kết nối. Vui lòng thử lại sau.</p>
+                    </div>
+                `;
+            }
+        });
+
+        // Social sharing functions
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Thông tin Bầu cử Quốc hội khóa XVI & HĐND các cấp 2026-2031 - Hãy thực hiện quyền công dân của bạn!');
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Thông tin Bầu cử Quốc hội khóa XVI & HĐND các cấp 2026-2031 - Hãy thực hiện quyền công dân của bạn! 🗳️');
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnZalo() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://zalo.me/share/social/?d=${url}`, '_blank', 'width=600,height=400');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                showToast('Đã sao chép liên kết!', 'success');
+            }).catch(() => {
+                showToast('Không thể sao chép liên kết', 'error');
+            });
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Format number with animation
+        function animateNumber(element, target, duration = 1000) {
+            const start = 0;
+            const startTime = performance.now();
+            
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                const current = Math.floor(progress * target);
+                element.textContent = current.toLocaleString();
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = target.toLocaleString();
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadElectionData();
+            loadElectionNews();
+            loadElectionStatistics();
+            loadElectionCalendar();
+            loadFAQ();
+        });
+    </script>
+</body>
+</html>

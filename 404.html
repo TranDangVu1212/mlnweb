@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Không Tìm Thấy Trang</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23DA251D'/><polygon points='50,20 58,40 80,40 62,52 70,75 50,60 30,75 38,52 20,40 42,40' fill='%23FFCD00'/></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Fredoka', 'sans-serif'],
+                        body: ['Nunito', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#DA251D',
+                        secondary: '#FFCD00',
+                        accent: '#0369A1',
+                        background: '#FFF8F0',
+                        text: '#1E293B',
+                        muted: '#64748B',
+                    },
+                    boxShadow: {
+                        'clay': '8px 8px 16px rgba(0,0,0,0.1), -4px -4px 12px rgba(255,255,255,0.9)',
+                    },
+                    borderRadius: {
+                        'clay': '20px',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body bg-background text-text antialiased min-h-screen flex items-center justify-center p-4">
+    <div class="text-center max-w-md">
+        <!-- 404 Illustration -->
+        <div class="relative mb-8">
+            <div class="text-[150px] font-heading font-bold text-primary/20 leading-none">404</div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-32 h-32 bg-primary rounded-full flex items-center justify-center shadow-clay">
+                    <svg class="w-20 h-20 text-secondary" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="font-heading text-3xl font-bold text-text mb-4">
+            Không Tìm Thấy Trang
+        </h1>
+        
+        <p class="text-muted mb-8">
+            Trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển đến địa chỉ khác.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/" class="inline-flex items-center justify-center gap-2 bg-accent text-white font-heading font-semibold px-6 py-3 rounded-clay shadow-clay hover:opacity-90 transition-opacity cursor-pointer">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9,22 9,12 15,12 15,22"/>
+                </svg>
+                Về Trang Chủ
+            </a>
+            <a href="/#services" class="inline-flex items-center justify-center gap-2 bg-white text-text font-heading font-semibold px-6 py-3 rounded-clay shadow-clay hover:bg-gray-50 transition-colors cursor-pointer border-2 border-gray-200">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                Tìm Dịch Vụ
+            </a>
+        </div>
+
+        <p class="text-sm text-muted mt-8">
+            Cổng Dịch Vụ Công Quốc Gia - Việt Nam
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết dịch vụ - Dịch Vụ Công Việt Nam</title>
+    <meta name="description" content="Thông tin chi tiết về dịch vụ công tại Việt Nam">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23DA251D'/><polygon points='50,20 58,40 80,40 62,52 70,75 50,60 30,75 38,52 20,40 42,40' fill='%23FFCD00'/></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Fredoka', 'sans-serif'],
+                        body: ['Nunito', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#DA251D',
+                        secondary: '#FFCD00',
+                        accent: '#0369A1',
+                        background: '#FFF8F0',
+                        surface: '#FFFFFF',
+                        text: '#1E293B',
+                        muted: '#64748B',
+                        success: '#22C55E',
+                        border: '#E2E8F0',
+                        peach: '#FDBCB4',
+                        babyblue: '#ADD8E6',
+                        mint: '#98FF98',
+                        lilac: '#E6E6FA',
+                    },
+                    boxShadow: {
+                        'clay': '8px 8px 16px rgba(0,0,0,0.1), -4px -4px 12px rgba(255,255,255,0.9), inset 2px 2px 4px rgba(255,255,255,0.5)',
+                        'clay-hover': '4px 4px 8px rgba(0,0,0,0.15), -2px -2px 8px rgba(255,255,255,0.9), inset 2px 2px 4px rgba(255,255,255,0.5)',
+                        'clay-card': '12px 12px 24px rgba(0,0,0,0.08), -6px -6px 16px rgba(255,255,255,0.95)',
+                    },
+                    borderRadius: {
+                        'clay': '20px',
+                        'clay-lg': '28px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        .clay-button {
+            transition: all 0.2s ease-out;
+        }
+        .clay-button:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="font-body bg-background text-text antialiased">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-4 left-4 right-4 z-50">
+        <div class="max-w-6xl mx-auto bg-white/90 backdrop-blur-md rounded-clay-lg shadow-clay-card border-2 border-white/50 px-4 sm:px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center gap-3 cursor-pointer">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center shadow-clay">
+                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-secondary" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="font-heading font-bold text-lg text-primary">Dịch Vụ Công</span>
+                        <span class="block text-xs text-muted">Việt Nam</span>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="/#services" class="text-text hover:text-primary transition-colors font-medium cursor-pointer">Dịch vụ</a>
+                    <a href="/#guide" class="text-text hover:text-primary transition-colors font-medium cursor-pointer">Hướng dẫn</a>
+                    <a href="/#tracking" class="text-text hover:text-primary transition-colors font-medium cursor-pointer">Tra cứu</a>
+                    <a href="/#contact" class="text-text hover:text-primary transition-colors font-medium cursor-pointer">Liên hệ</a>
+                </div>
+                
+                <a href="/#vote" class="clay-button bg-primary text-white font-heading font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-clay shadow-clay hover:shadow-clay-hover flex items-center gap-2 cursor-pointer">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22,4 12,14.01 9,11.01"/>
+                    </svg>
+                    <span class="hidden sm:inline">Đi Bầu Cử</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-28 pb-16 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Breadcrumb -->
+            <nav class="mb-6">
+                <ol class="flex items-center gap-2 text-sm text-muted">
+                    <li><a href="/" class="hover:text-accent cursor-pointer">Trang chủ</a></li>
+                    <li><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></li>
+                    <li><a href="/#services" class="hover:text-accent cursor-pointer">Dịch vụ</a></li>
+                    <li><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></li>
+                    <li id="breadcrumb-category" class="hover:text-accent cursor-pointer">Danh mục</li>
+                </ol>
+            </nav>
+
+            <!-- Loading State -->
+            <div id="loading-state" class="animate-pulse">
+                <div class="h-10 bg-gray-200 rounded-clay w-3/4 mb-4"></div>
+                <div class="h-6 bg-gray-200 rounded-clay w-1/2 mb-8"></div>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 space-y-4">
+                        <div class="h-64 bg-gray-200 rounded-clay-lg"></div>
+                        <div class="h-64 bg-gray-200 rounded-clay-lg"></div>
+                    </div>
+                    <div class="h-96 bg-gray-200 rounded-clay-lg"></div>
+                </div>
+            </div>
+
+            <!-- Service Detail Content -->
+            <div id="service-content" class="hidden">
+                <!-- Header -->
+                <div class="mb-8">
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                        <span id="service-status" class="text-sm font-medium px-4 py-1 rounded-full"></span>
+                        <span id="service-level" class="text-sm font-medium px-4 py-1 rounded-full bg-accent/10 text-accent"></span>
+                    </div>
+                    <h1 id="service-name" class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4"></h1>
+                    <p id="service-description" class="text-lg text-muted"></p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Main Content -->
+                    <div class="lg:col-span-2 space-y-6">
+                        <!-- Quick Info -->
+                        <div class="bg-white rounded-clay-lg shadow-clay-card p-6 border-4 border-white">
+                            <h2 class="font-heading text-xl font-bold text-text mb-4 flex items-center gap-2">
+                                <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="12" y1="16" x2="12" y2="12"/>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                                </svg>
+                                Thông Tin Chung
+                            </h2>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="p-4 bg-babyblue/20 rounded-clay">
+                                    <span class="text-sm text-muted block">Thời gian xử lý</span>
+                                    <span id="service-time" class="font-semibold text-text"></span>
+                                </div>
+                                <div class="p-4 bg-mint/20 rounded-clay">
+                                    <span class="text-sm text-muted block">Lệ phí</span>
+                                    <span id="service-fee" class="font-semibold text-text"></span>
+                                </div>
+                                <div class="p-4 bg-lilac/20 rounded-clay sm:col-span-2">
+                                    <span class="text-sm text-muted block">Cơ quan thực hiện</span>
+                                    <span id="service-agency" class="font-semibold text-text"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Requirements -->
+                        <div class="bg-white rounded-clay-lg shadow-clay-card p-6 border-4 border-white">
+                            <h2 class="font-heading text-xl font-bold text-text mb-4 flex items-center gap-2">
+                                <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                                Hồ Sơ Cần Chuẩn Bị
+                            </h2>
+                            <ul id="service-requirements" class="space-y-3">
+                                <!-- Dynamic content -->
+                            </ul>
+                        </div>
+
+                        <!-- Process -->
+                        <div class="bg-white rounded-clay-lg shadow-clay-card p-6 border-4 border-white">
+                            <h2 class="font-heading text-xl font-bold text-text mb-4 flex items-center gap-2">
+                                <svg class="w-6 h-6 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9,11 12,14 22,4"/>
+                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                                </svg>
+                                Quy Trình Thực Hiện
+                            </h2>
+                            <div id="service-process" class="space-y-4">
+                                <!-- Dynamic content -->
+                            </div>
+                        </div>
+
+                        <!-- FAQs -->
+                        <div id="faqs-section" class="bg-white rounded-clay-lg shadow-clay-card p-6 border-4 border-white">
+                            <h2 class="font-heading text-xl font-bold text-text mb-4 flex items-center gap-2">
+                                <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                </svg>
+                                Câu Hỏi Thường Gặp
+                            </h2>
+                            <div id="service-faqs" class="space-y-4">
+                                <!-- Dynamic content -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="space-y-6">
+                        <!-- Action Card -->
+                        <div class="bg-gradient-to-br from-accent to-blue-600 rounded-clay-lg shadow-clay-card p-6 text-white">
+                            <h3 class="font-heading text-xl font-bold mb-4">Thực Hiện Ngay</h3>
+                            <p class="text-white/90 mb-6">Đăng nhập để nộp hồ sơ trực tuyến và theo dõi tiến độ xử lý.</p>
+                            <a href="#" class="clay-button block w-full bg-white text-accent font-heading font-semibold py-4 rounded-clay text-center cursor-pointer hover:bg-gray-50">
+                                Nộp Hồ Sơ Online
+                            </a>
+                            <a href="/#tracking" class="block w-full text-center mt-3 text-white/90 hover:text-white underline">
+                                Tra cứu hồ sơ đã nộp
+                            </a>
+                        </div>
+
+                        <!-- Forms Download -->
+                        <div id="forms-section" class="bg-white rounded-clay-lg shadow-clay-card p-6 border-4 border-white">
+                            <h3 class="font-heading text-lg font-bold text-text mb-4 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7,10 12,15 17,10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
+                                </svg>
+                                Biểu Mẫu
+                            </h3>
+                            <div id="service-forms" class="space-y-2">
+                                <!-- Dynamic content -->
+                            </div>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="bg-peach/20 rounded-clay-lg p-6 border-4 border-white">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-secondary" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                    </svg>
+                                    <span id="service-rating" class="font-bold text-text"></span>
+                                </div>
+                                <span class="text-sm text-muted">Đánh giá</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                    <span id="service-views" class="font-bold text-text"></span>
+                                </div>
+                                <span class="text-sm text-muted">Lượt xem</span>
+                            </div>
+                        </div>
+
+                        <!-- Related Services -->
+                        <div id="related-section" class="bg-white rounded-clay-lg shadow-clay-card p-6 border-4 border-white">
+                            <h3 class="font-heading text-lg font-bold text-text mb-4">Dịch Vụ Liên Quan</h3>
+                            <div id="related-services" class="space-y-3">
+                                <!-- Dynamic content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-state" class="hidden text-center py-16">
+                <svg class="w-24 h-24 mx-auto text-muted mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 8v4m0 4h.01"/>
+                </svg>
+                <h2 class="font-heading text-2xl font-bold text-text mb-2">Không Tìm Thấy Dịch Vụ</h2>
+                <p class="text-muted mb-6">Dịch vụ bạn tìm kiếm không tồn tại hoặc đã bị xóa.</p>
+                <a href="/" class="clay-button inline-flex items-center gap-2 bg-accent text-white font-heading font-semibold px-6 py-3 rounded-clay shadow-clay hover:shadow-clay-hover cursor-pointer">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Quay Về Trang Chủ
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-text text-white py-8 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-white/70">© 2026 Cổng Dịch Vụ Công Quốc Gia - Nước Cộng hòa Xã hội Chủ nghĩa Việt Nam</p>
+        </div>
+    </footer>
+
+    <script>
+        const API_BASE = window.location.origin;
+
+        // Get service ID from URL
+        const pathParts = window.location.pathname.split('/');
+        const serviceId = pathParts[pathParts.length - 1];
+
+        // Format number
+        function formatNumber(num) {
+            return new Intl.NumberFormat('vi-VN').format(num);
+        }
+
+        // Get status badge
+        function getStatusBadge(status) {
+            const statusMap = {
+                'online': { text: 'Trực tuyến hoàn toàn', class: 'bg-success/20 text-success' },
+                'partial': { text: 'Một phần trực tuyến', class: 'bg-secondary/20 text-yellow-700' },
+                'offline': { text: 'Trực tiếp', class: 'bg-muted/20 text-muted' }
+            };
+            return statusMap[status] || statusMap['offline'];
+        }
+
+        // Get level text
+        function getLevelText(level) {
+            const levels = {
+                1: 'Mức độ 1',
+                2: 'Mức độ 2',
+                3: 'Mức độ 3',
+                4: 'Mức độ 4'
+            };
+            return levels[level] || 'Không xác định';
+        }
+
+        // Load service detail
+        async function loadServiceDetail() {
+            try {
+                const response = await fetch(`${API_BASE}/api/services/${serviceId}`);
+                const result = await response.json();
+
+                if (!result.success) {
+                    throw new Error('Service not found');
+                }
+
+                const service = result.data;
+                
+                // Update page title
+                document.title = `${service.name} - Dịch Vụ Công Việt Nam`;
+                
+                // Update breadcrumb
+                if (service.category) {
+                    document.getElementById('breadcrumb-category').textContent = service.category.name;
+                }
+
+                // Update header
+                const statusInfo = getStatusBadge(service.status);
+                document.getElementById('service-status').textContent = statusInfo.text;
+                document.getElementById('service-status').className = `text-sm font-medium px-4 py-1 rounded-full ${statusInfo.class}`;
+                document.getElementById('service-level').textContent = getLevelText(service.level);
+                document.getElementById('service-name').textContent = service.name;
+                document.getElementById('service-description').textContent = service.fullDescription;
+
+                // Update quick info
+                document.getElementById('service-time').textContent = service.processingTime;
+                document.getElementById('service-fee').textContent = service.fee;
+                document.getElementById('service-agency').textContent = service.agency;
+
+                // Update requirements
+                const requirementsEl = document.getElementById('service-requirements');
+                requirementsEl.innerHTML = service.requirements.map(req => `
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,11 12,14 22,4"/>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                        <span>${req}</span>
+                    </li>
+                `).join('');
+
+                // Update process
+                const processEl = document.getElementById('service-process');
+                processEl.innerHTML = service.process.map((step, index) => `
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                            ${index + 1}
+                        </div>
+                        <div class="flex-1 pt-1">
+                            <p class="text-text">${step.replace(/^Bước \d+:\s*/, '')}</p>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Update FAQs
+                if (service.faqs && service.faqs.length > 0) {
+                    const faqsEl = document.getElementById('service-faqs');
+                    faqsEl.innerHTML = service.faqs.map(faq => `
+                        <div class="border-b border-border pb-4 last:border-0 last:pb-0">
+                            <h4 class="font-semibold text-text mb-2">${faq.question}</h4>
+                            <p class="text-muted text-sm">${faq.answer}</p>
+                        </div>
+                    `).join('');
+                } else {
+                    document.getElementById('faqs-section').style.display = 'none';
+                }
+
+                // Update forms
+                if (service.forms && service.forms.length > 0) {
+                    const formsEl = document.getElementById('service-forms');
+                    formsEl.innerHTML = service.forms.map(form => `
+                        <a href="${form.url}" class="flex items-center gap-3 p-3 bg-background rounded-clay hover:bg-accent/10 transition-colors cursor-pointer">
+                            <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                            </svg>
+                            <span class="text-sm font-medium text-text">${form.name}</span>
+                        </a>
+                    `).join('');
+                } else {
+                    document.getElementById('forms-section').style.display = 'none';
+                }
+
+                // Update stats
+                document.getElementById('service-rating').textContent = service.rating + '/5';
+                document.getElementById('service-views').textContent = formatNumber(service.views);
+
+                // Update related services
+                if (service.relatedServices && service.relatedServices.length > 0) {
+                    const relatedEl = document.getElementById('related-services');
+                    relatedEl.innerHTML = service.relatedServices.map(related => `
+                        <a href="/dich-vu/${related.id}" class="block p-3 bg-background rounded-clay hover:bg-accent/10 transition-colors cursor-pointer">
+                            <span class="font-medium text-text text-sm">${related.name}</span>
+                        </a>
+                    `).join('');
+                } else {
+                    document.getElementById('related-section').style.display = 'none';
+                }
+
+                // Show content, hide loading
+                document.getElementById('loading-state').classList.add('hidden');
+                document.getElementById('service-content').classList.remove('hidden');
+
+            } catch (error) {
+                console.error('Error loading service:', error);
+                document.getElementById('loading-state').classList.add('hidden');
+                document.getElementById('error-state').classList.remove('hidden');
+            }
+        }
+
+        // Load on page ready
+        document.addEventListener('DOMContentLoaded', loadServiceDetail);
+    </script>
+</body>
+</html>
