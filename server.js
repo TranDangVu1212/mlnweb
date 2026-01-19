@@ -23,6 +23,63 @@ try {
 const contacts = [];
 const trackingData = new Map();
 
+// Initialize demo tracking data
+const initDemoTracking = () => {
+    const demoRecords = [
+        {
+            code: 'HS2026001234',
+            serviceName: 'Cấp Căn cước công dân gắn chip lần đầu',
+            applicant: { fullName: 'Nguyễn Văn An', phone: '0901234567' },
+            submitDate: '2026-01-15',
+            estimatedCompletion: '2026-01-22',
+            status: 'processing',
+            fee: '25,000 VNĐ',
+            agency: 'Công an Quận Ba Đình, TP. Hà Nội',
+            statusHistory: [
+                { status: 'received', date: '2026-01-15T08:30:00', note: 'Hồ sơ đã được tiếp nhận' },
+                { status: 'verifying', date: '2026-01-15T14:00:00', note: 'Đang xác minh thông tin' },
+                { status: 'processing', date: '2026-01-17T09:00:00', note: 'Đang xử lý tại phòng QLHC' }
+            ]
+        },
+        {
+            code: 'HS2026005678',
+            serviceName: 'Đăng ký kết hôn',
+            applicant: { fullName: 'Trần Minh Tuấn', phone: '0912345678' },
+            submitDate: '2026-01-10',
+            estimatedCompletion: '2026-01-17',
+            status: 'completed',
+            fee: 'Miễn phí',
+            agency: 'UBND Phường Láng Hạ, Quận Đống Đa, TP. Hà Nội',
+            statusHistory: [
+                { status: 'received', date: '2026-01-10T09:00:00', note: 'Hồ sơ đã được tiếp nhận' },
+                { status: 'verifying', date: '2026-01-10T14:30:00', note: 'Đang xác minh thông tin' },
+                { status: 'processing', date: '2026-01-12T10:00:00', note: 'Đang xử lý' },
+                { status: 'approval', date: '2026-01-15T11:00:00', note: 'Đã phê duyệt' },
+                { status: 'completed', date: '2026-01-16T08:00:00', note: 'Hoàn thành - Đã trả kết quả' }
+            ]
+        },
+        {
+            code: 'HS2026009012',
+            serviceName: 'Cấp Giấy phép lái xe hạng B1',
+            applicant: { fullName: 'Lê Thị Hương', phone: '0987654321' },
+            submitDate: '2026-01-18',
+            estimatedCompletion: '2026-02-01',
+            status: 'pending',
+            fee: '135,000 VNĐ',
+            agency: 'Sở Giao thông Vận tải TP. Hồ Chí Minh',
+            statusHistory: [
+                { status: 'received', date: '2026-01-18T10:00:00', note: 'Hồ sơ đã được tiếp nhận' }
+            ]
+        }
+    ];
+
+    demoRecords.forEach(record => {
+        trackingData.set(record.code, record);
+    });
+};
+
+initDemoTracking();
+
 // ============ API ROUTES ============
 
 // Get all categories
@@ -922,6 +979,615 @@ app.get('/api/categories/:id/services', (req, res) => {
             }
         }
     });
+});
+
+// ============ NEW COMPREHENSIVE APIs ============
+
+// Service ratings and reviews storage
+const serviceReviews = [];
+
+// Submit service review
+app.post('/api/services/:id/reviews', (req, res) => {
+    const { id } = req.params;
+    const { rating, comment, userName, userEmail } = req.body;
+
+    if (!rating || rating < 1 || rating > 5) {
+        return res.status(400).json({
+            success: false,
+            message: 'Vui lòng đánh giá từ 1-5 sao'
+        });
+    }
+
+    const service = (servicesData.services || []).find(s => s.id === id);
+    if (!service) {
+        return res.status(404).json({
+            success: false,
+            message: 'Không tìm thấy dịch vụ'
+        });
+    }
+
+    const review = {
+        id: Date.now(),
+        serviceId: id,
+        rating: parseInt(rating),
+        comment: comment || '',
+        userName: userName || 'Ẩn danh',
+        userEmail: userEmail || '',
+        createdAt: new Date().toISOString(),
+        status: 'approved'
+    };
+
+    serviceReviews.push(review);
+
+    res.json({
+        success: true,
+        message: 'Cảm ơn bạn đã đánh giá dịch vụ!',
+        data: review
+    });
+});
+
+// Get service reviews
+app.get('/api/services/:id/reviews', (req, res) => {
+    const { id } = req.params;
+    const { page = 1, limit = 10 } = req.query;
+
+    const reviews = serviceReviews.filter(r => r.serviceId === id && r.status === 'approved');
+    
+    const startIndex = (page - 1) * limit;
+    const paginatedReviews = reviews.slice(startIndex, startIndex + parseInt(limit));
+
+    const avgRating = reviews.length > 0 
+        ? (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1)
+        : 0;
+
+    res.json({
+        success: true,
+        data: {
+            reviews: paginatedReviews,
+            stats: {
+                total: reviews.length,
+                average: parseFloat(avgRating),
+                distribution: {
+                    5: reviews.filter(r => r.rating === 5).length,
+                    4: reviews.filter(r => r.rating === 4).length,
+                    3: reviews.filter(r => r.rating === 3).length,
+                    2: reviews.filter(r => r.rating === 2).length,
+                    1: reviews.filter(r => r.rating === 1).length
+                }
+            },
+            pagination: {
+                total: reviews.length,
+                page: parseInt(page),
+                limit: parseInt(limit)
+            }
+        }
+    });
+});
+
+// Appointment booking storage
+const appointments = [];
+
+// Book appointment for service
+app.post('/api/appointments', (req, res) => {
+    const { serviceId, date, time, fullName, phone, email, notes, location } = req.body;
+
+    if (!serviceId || !date || !time || !fullName || !phone) {
+        return res.status(400).json({
+            success: false,
+            message: 'Vui lòng điền đầy đủ thông tin bắt buộc'
+        });
+    }
+
+    const service = (servicesData.services || []).find(s => s.id === serviceId);
+    if (!service) {
+        return res.status(404).json({
+            success: false,
+            message: 'Không tìm thấy dịch vụ'
+        });
+    }
+
+    const appointment = {
+        id: Date.now(),
+        code: `LH${Date.now().toString().slice(-8)}`,
+        serviceId,
+        serviceName: service.name,
+        date,
+        time,
+        fullName,
+        phone,
+        email: email || '',
+        notes: notes || '',
+        location: location || service.agency,
+        status: 'pending',
+        createdAt: new Date().toISOString()
+    };
+
+    appointments.push(appointment);
+
+    res.json({
+        success: true,
+        message: 'Đặt lịch hẹn thành công! Vui lòng chờ xác nhận.',
+        data: {
+            appointmentCode: appointment.code,
+            appointment
+        }
+    });
+});
+
+// Check appointment status
+app.get('/api/appointments/:code', (req, res) => {
+    const { code } = req.params;
+    
+    const appointment = appointments.find(a => a.code === code);
+    
+    if (!appointment) {
+        return res.status(404).json({
+            success: false,
+            message: 'Không tìm thấy lịch hẹn với mã này'
+        });
+    }
+
+    res.json({
+        success: true,
+        data: appointment
+    });
+});
+
+// Document application submission storage
+const applications = [];
+
+// Submit document application
+app.post('/api/applications', (req, res) => {
+    const { serviceId, documents, applicant, deliveryMethod, paymentMethod } = req.body;
+
+    if (!serviceId || !applicant || !applicant.fullName || !applicant.phone) {
+        return res.status(400).json({
+            success: false,
+            message: 'Vui lòng điền đầy đủ thông tin bắt buộc'
+        });
+    }
+
+    const service = (servicesData.services || []).find(s => s.id === serviceId);
+    if (!service) {
+        return res.status(404).json({
+            success: false,
+            message: 'Không tìm thấy dịch vụ'
+        });
+    }
+
+    const application = {
+        id: Date.now(),
+        code: `HS${new Date().getFullYear()}${Date.now().toString().slice(-6)}`,
+        serviceId,
+        serviceName: service.name,
+        applicant: {
+            fullName: applicant.fullName,
+            phone: applicant.phone,
+            email: applicant.email || '',
+            idNumber: applicant.idNumber || '',
+            address: applicant.address || ''
+        },
+        documents: documents || [],
+        deliveryMethod: deliveryMethod || 'pickup',
+        paymentMethod: paymentMethod || 'cash',
+        fee: service.fee,
+        status: 'received',
+        statusHistory: [
+            {
+                status: 'received',
+                date: new Date().toISOString(),
+                note: 'Hồ sơ đã được tiếp nhận'
+            }
+        ],
+        estimatedCompletion: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+        createdAt: new Date().toISOString()
+    };
+
+    applications.push(application);
+    trackingData.set(application.code, application);
+
+    res.json({
+        success: true,
+        message: 'Nộp hồ sơ thành công!',
+        data: {
+            applicationCode: application.code,
+            application
+        }
+    });
+});
+
+// Get application status
+app.get('/api/applications/:code', (req, res) => {
+    const { code } = req.params;
+    
+    const application = applications.find(a => a.code === code) || trackingData.get(code);
+    
+    if (!application) {
+        return res.status(404).json({
+            success: false,
+            message: 'Không tìm thấy hồ sơ với mã này'
+        });
+    }
+
+    res.json({
+        success: true,
+        data: application
+    });
+});
+
+// Hotline/Support tickets storage
+const supportTickets = [];
+
+// Create support ticket
+app.post('/api/support/tickets', (req, res) => {
+    const { type, subject, description, contactName, contactPhone, contactEmail, priority } = req.body;
+
+    if (!type || !subject || !description || !contactPhone) {
+        return res.status(400).json({
+            success: false,
+            message: 'Vui lòng điền đầy đủ thông tin bắt buộc'
+        });
+    }
+
+    const ticket = {
+        id: Date.now(),
+        code: `TK${Date.now().toString().slice(-8)}`,
+        type,
+        subject,
+        description,
+        contactName: contactName || '',
+        contactPhone,
+        contactEmail: contactEmail || '',
+        priority: priority || 'normal',
+        status: 'open',
+        createdAt: new Date().toISOString(),
+        responses: []
+    };
+
+    supportTickets.push(ticket);
+
+    res.json({
+        success: true,
+        message: 'Yêu cầu hỗ trợ đã được ghi nhận. Chúng tôi sẽ phản hồi trong thời gian sớm nhất.',
+        data: {
+            ticketCode: ticket.code,
+            ticket
+        }
+    });
+});
+
+// Get support ticket status
+app.get('/api/support/tickets/:code', (req, res) => {
+    const { code } = req.params;
+    
+    const ticket = supportTickets.find(t => t.code === code);
+    
+    if (!ticket) {
+        return res.status(404).json({
+            success: false,
+            message: 'Không tìm thấy yêu cầu hỗ trợ với mã này'
+        });
+    }
+
+    res.json({
+        success: true,
+        data: ticket
+    });
+});
+
+// Government agencies directory
+app.get('/api/agencies', (req, res) => {
+    const { province, type, search } = req.query;
+
+    const agencies = [
+        {
+            id: 1,
+            name: 'UBND Thành phố Hà Nội',
+            type: 'provincial',
+            province: 'Hà Nội',
+            address: '12 Lê Lai, Hoàn Kiếm, Hà Nội',
+            phone: '024-3825-3536',
+            email: 'ubndhanoi@hanoi.gov.vn',
+            website: 'https://hanoi.gov.vn',
+            workingHours: '08:00 - 17:00 (Thứ 2 - Thứ 6)',
+            services: ['Hộ tịch', 'Đất đai', 'Xây dựng', 'Kinh doanh']
+        },
+        {
+            id: 2,
+            name: 'UBND Thành phố Hồ Chí Minh',
+            type: 'provincial',
+            province: 'TP. Hồ Chí Minh',
+            address: '86 Lê Thánh Tôn, Quận 1, TP.HCM',
+            phone: '028-3829-6060',
+            email: 'ubnd@tphcm.gov.vn',
+            website: 'https://hochiminhcity.gov.vn',
+            workingHours: '07:30 - 16:30 (Thứ 2 - Thứ 6)',
+            services: ['Hộ tịch', 'Đất đai', 'Xây dựng', 'Kinh doanh']
+        },
+        {
+            id: 3,
+            name: 'Công an Thành phố Hà Nội',
+            type: 'police',
+            province: 'Hà Nội',
+            address: '87 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội',
+            phone: '024-3942-4244',
+            email: 'conganhanoi@cand.com.vn',
+            website: 'https://conganhanoi.gov.vn',
+            workingHours: '08:00 - 17:00 (Thứ 2 - Thứ 7)',
+            services: ['CCCD', 'Hộ chiếu', 'Cư trú', 'Đăng ký xe']
+        },
+        {
+            id: 4,
+            name: 'Sở Giao thông Vận tải Hà Nội',
+            type: 'department',
+            province: 'Hà Nội',
+            address: '2 Phùng Hưng, Hoàn Kiếm, Hà Nội',
+            phone: '024-3825-2769',
+            email: 'sogtvthanoi@hanoi.gov.vn',
+            website: 'https://sogtvt.hanoi.gov.vn',
+            workingHours: '08:00 - 17:00 (Thứ 2 - Thứ 6)',
+            services: ['GPLX', 'Đăng ký xe', 'Đăng kiểm']
+        },
+        {
+            id: 5,
+            name: 'Bảo hiểm Xã hội Thành phố Hà Nội',
+            type: 'insurance',
+            province: 'Hà Nội',
+            address: '89 Láng Hạ, Đống Đa, Hà Nội',
+            phone: '024-3562-8666',
+            email: 'bhxhhanoi@vss.gov.vn',
+            website: 'https://hanoi.baohiemxahoi.gov.vn',
+            workingHours: '08:00 - 17:00 (Thứ 2 - Thứ 6)',
+            services: ['BHXH', 'BHYT', 'Bảo hiểm thất nghiệp']
+        }
+    ];
+
+    let results = agencies;
+
+    if (province) {
+        results = results.filter(a => a.province.toLowerCase().includes(province.toLowerCase()));
+    }
+    if (type) {
+        results = results.filter(a => a.type === type);
+    }
+    if (search) {
+        const searchLower = search.toLowerCase();
+        results = results.filter(a => 
+            a.name.toLowerCase().includes(searchLower) ||
+            a.services.some(s => s.toLowerCase().includes(searchLower))
+        );
+    }
+
+    res.json({
+        success: true,
+        data: results,
+        total: results.length
+    });
+});
+
+// Legal documents/regulations
+app.get('/api/legal-documents', (req, res) => {
+    const { type, category, search, page = 1, limit = 10 } = req.query;
+
+    const documents = [
+        {
+            id: 1,
+            number: '59/2022/NĐ-CP',
+            title: 'Nghị định về định danh và xác thực điện tử',
+            type: 'decree',
+            category: 'can-cuoc',
+            issuedDate: '2022-09-05',
+            effectiveDate: '2022-11-01',
+            issuingAuthority: 'Chính phủ',
+            summary: 'Quy định về định danh và xác thực điện tử cho công dân Việt Nam',
+            downloadUrl: '/documents/59-2022-ND-CP.pdf'
+        },
+        {
+            id: 2,
+            number: '23/2023/NĐ-CP',
+            title: 'Nghị định về Căn cước công dân',
+            type: 'decree',
+            category: 'can-cuoc',
+            issuedDate: '2023-05-01',
+            effectiveDate: '2023-07-01',
+            issuingAuthority: 'Chính phủ',
+            summary: 'Quy định chi tiết về cấp, đổi, cấp lại thẻ Căn cước công dân',
+            downloadUrl: '/documents/23-2023-ND-CP.pdf'
+        },
+        {
+            id: 3,
+            number: '60/2021/NĐ-CP',
+            title: 'Nghị định về cơ chế tự chủ tài chính của đơn vị sự nghiệp công lập',
+            type: 'decree',
+            category: 'tai-chinh',
+            issuedDate: '2021-06-21',
+            effectiveDate: '2021-08-15',
+            issuingAuthority: 'Chính phủ',
+            summary: 'Quy định về cơ chế tự chủ tài chính của các đơn vị sự nghiệp công lập',
+            downloadUrl: '/documents/60-2021-ND-CP.pdf'
+        },
+        {
+            id: 4,
+            number: '45/2019/QH14',
+            title: 'Luật Cư trú',
+            type: 'law',
+            category: 'cu-tru',
+            issuedDate: '2019-11-13',
+            effectiveDate: '2020-07-01',
+            issuingAuthority: 'Quốc hội',
+            summary: 'Quy định về quyền tự do cư trú của công dân Việt Nam',
+            downloadUrl: '/documents/45-2019-QH14.pdf'
+        },
+        {
+            id: 5,
+            number: '01/2017/TT-BTP',
+            title: 'Thông tư hướng dẫn về hộ tịch',
+            type: 'circular',
+            category: 'ho-tich',
+            issuedDate: '2017-01-23',
+            effectiveDate: '2017-03-10',
+            issuingAuthority: 'Bộ Tư pháp',
+            summary: 'Hướng dẫn thi hành một số điều của Luật hộ tịch',
+            downloadUrl: '/documents/01-2017-TT-BTP.pdf'
+        }
+    ];
+
+    let results = documents;
+
+    if (type) {
+        results = results.filter(d => d.type === type);
+    }
+    if (category) {
+        results = results.filter(d => d.category === category);
+    }
+    if (search) {
+        const searchLower = search.toLowerCase();
+        results = results.filter(d => 
+            d.title.toLowerCase().includes(searchLower) ||
+            d.number.toLowerCase().includes(searchLower) ||
+            d.summary.toLowerCase().includes(searchLower)
+        );
+    }
+
+    const startIndex = (page - 1) * limit;
+    const paginatedResults = results.slice(startIndex, startIndex + parseInt(limit));
+
+    res.json({
+        success: true,
+        data: paginatedResults,
+        pagination: {
+            total: results.length,
+            page: parseInt(page),
+            limit: parseInt(limit),
+            totalPages: Math.ceil(results.length / limit)
+        }
+    });
+});
+
+// System announcements
+app.get('/api/announcements', (req, res) => {
+    const announcements = [
+        {
+            id: 1,
+            title: 'Bảo trì hệ thống định kỳ',
+            content: 'Hệ thống sẽ được bảo trì vào 23:00 - 02:00 ngày 25/01/2026. Trong thời gian này, một số dịch vụ có thể bị gián đoạn.',
+            type: 'maintenance',
+            priority: 'high',
+            startDate: '2026-01-25T23:00:00',
+            endDate: '2026-01-26T02:00:00',
+            createdAt: '2026-01-19T10:00:00',
+            active: true
+        },
+        {
+            id: 2,
+            title: 'Ra mắt tính năng đặt lịch hẹn trực tuyến',
+            content: 'Từ ngày 01/02/2026, công dân có thể đặt lịch hẹn trực tuyến cho tất cả các dịch vụ công cấp độ 4.',
+            type: 'feature',
+            priority: 'normal',
+            startDate: '2026-02-01T00:00:00',
+            createdAt: '2026-01-18T14:00:00',
+            active: true
+        },
+        {
+            id: 3,
+            title: 'Thông báo về Bầu cử Quốc hội khóa XVI',
+            content: 'Ngày bầu cử đại biểu Quốc hội khóa XVI và đại biểu HĐND các cấp: Chủ nhật, 24/05/2026. Mọi công dân đủ 18 tuổi hãy thực hiện quyền và nghĩa vụ công dân.',
+            type: 'election',
+            priority: 'critical',
+            startDate: '2026-01-15T00:00:00',
+            endDate: '2026-05-25T00:00:00',
+            createdAt: '2026-01-15T08:00:00',
+            active: true,
+            link: '/election.html'
+        }
+    ];
+
+    const activeAnnouncements = announcements.filter(a => a.active);
+
+    res.json({
+        success: true,
+        data: activeAnnouncements
+    });
+});
+
+// Provinces/Districts/Wards data
+app.get('/api/locations', (req, res) => {
+    const { type, parentId } = req.query;
+
+    const provinces = [
+        { id: 'hanoi', name: 'Thành phố Hà Nội', code: '01' },
+        { id: 'hcm', name: 'Thành phố Hồ Chí Minh', code: '79' },
+        { id: 'danang', name: 'Thành phố Đà Nẵng', code: '48' },
+        { id: 'haiphong', name: 'Thành phố Hải Phòng', code: '31' },
+        { id: 'cantho', name: 'Thành phố Cần Thơ', code: '92' }
+    ];
+
+    const districts = {
+        'hanoi': [
+            { id: 'hoankiém', name: 'Quận Hoàn Kiếm' },
+            { id: 'badinh', name: 'Quận Ba Đình' },
+            { id: 'dongda', name: 'Quận Đống Đa' },
+            { id: 'haibatrung', name: 'Quận Hai Bà Trưng' },
+            { id: 'caugiay', name: 'Quận Cầu Giấy' }
+        ],
+        'hcm': [
+            { id: 'quan1', name: 'Quận 1' },
+            { id: 'quan3', name: 'Quận 3' },
+            { id: 'phunhuan', name: 'Quận Phú Nhuận' },
+            { id: 'binhthanh', name: 'Quận Bình Thạnh' },
+            { id: 'tanbinh', name: 'Quận Tân Bình' }
+        ]
+    };
+
+    if (type === 'provinces' || !type) {
+        return res.json({ success: true, data: provinces });
+    }
+
+    if (type === 'districts' && parentId) {
+        return res.json({ success: true, data: districts[parentId] || [] });
+    }
+
+    res.json({ success: true, data: [] });
+});
+
+// Quick service lookup by keywords
+app.get('/api/quick-search', (req, res) => {
+    const { keyword } = req.query;
+
+    const quickLinks = {
+        'cccd': { service: 'cap-cccd-lan-dau', name: 'Cấp CCCD gắn chip lần đầu' },
+        'căn cước': { service: 'cap-cccd-lan-dau', name: 'Cấp CCCD gắn chip lần đầu' },
+        'khai sinh': { service: 'dang-ky-khai-sinh', name: 'Đăng ký khai sinh' },
+        'kết hôn': { service: 'dang-ky-ket-hon', name: 'Đăng ký kết hôn' },
+        'hộ khẩu': { service: 'dang-ky-thuong-tru', name: 'Đăng ký thường trú' },
+        'thường trú': { service: 'dang-ky-thuong-tru', name: 'Đăng ký thường trú' },
+        'bằng lái': { service: 'doi-gplx', name: 'Đổi giấy phép lái xe' },
+        'gplx': { service: 'doi-gplx', name: 'Đổi giấy phép lái xe' },
+        'bhyt': { service: 'cap-the-bhyt', name: 'Cấp thẻ bảo hiểm y tế' },
+        'bảo hiểm': { service: 'cap-the-bhyt', name: 'Cấp thẻ bảo hiểm y tế' },
+        'sổ đỏ': { service: 'cap-so-do', name: 'Cấp Giấy chứng nhận quyền sử dụng đất' },
+        'đất đai': { service: 'cap-so-do', name: 'Cấp Giấy chứng nhận quyền sử dụng đất' },
+        'kinh doanh': { service: 'dang-ky-kinh-doanh', name: 'Đăng ký hộ kinh doanh' }
+    };
+
+    if (!keyword) {
+        return res.json({ success: true, data: Object.values(quickLinks) });
+    }
+
+    const keywordLower = keyword.toLowerCase();
+    const match = Object.entries(quickLinks).find(([key]) => 
+        key.includes(keywordLower) || keywordLower.includes(key)
+    );
+
+    if (match) {
+        return res.json({ 
+            success: true, 
+            data: match[1],
+            redirect: `/dich-vu/${match[1].service}`
+        });
+    }
+
+    res.json({ success: true, data: null });
 });
 
 // Serve main page

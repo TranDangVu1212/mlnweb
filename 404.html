@@ -3,84 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Không Tìm Thấy Trang</title>
+    <title>404 - Không tìm thấy trang | Cổng Dịch Vụ Công Quốc Gia</title>
+    <meta name="description" content="Trang bạn tìm kiếm không tồn tại">
     
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23DA251D'/><polygon points='50,20 58,40 80,40 62,52 70,75 50,60 30,75 38,52 20,40 42,40' fill='%23FFCD00'/></svg>">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230F172A'/><polygon points='50,15 61,40 88,40 67,58 76,85 50,68 24,85 33,58 12,40 39,40' fill='%23B8860B'/></svg>">
     
+    <!-- Google Fonts - Swiss Modernism -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        heading: ['Fredoka', 'sans-serif'],
-                        body: ['Nunito', 'sans-serif'],
+                        heading: ['EB Garamond', 'serif'],
+                        body: ['IBM Plex Sans', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#DA251D',
-                        secondary: '#FFCD00',
+                        navy: '#0F172A',
+                        navyLight: '#1E293B',
+                        vietred: '#B91C1C',
+                        vietredLight: '#DC2626',
+                        gold: '#B8860B',
+                        goldLight: '#D4A017',
                         accent: '#0369A1',
-                        background: '#FFF8F0',
+                        accentLight: '#0284C7',
+                        cream: '#FEFDF8',
+                        warmgray: '#F8F6F1',
+                        border: '#E5E2D9',
                         text: '#1E293B',
                         muted: '#64748B',
                     },
                     boxShadow: {
-                        'clay': '8px 8px 16px rgba(0,0,0,0.1), -4px -4px 12px rgba(255,255,255,0.9)',
-                    },
-                    borderRadius: {
-                        'clay': '20px',
+                        'formal': '0 1px 3px rgba(15, 23, 42, 0.12), 0 1px 2px rgba(15, 23, 42, 0.08)',
+                        'formal-md': '0 4px 6px rgba(15, 23, 42, 0.1), 0 2px 4px rgba(15, 23, 42, 0.06)',
+                        'formal-lg': '0 10px 15px rgba(15, 23, 42, 0.1), 0 4px 6px rgba(15, 23, 42, 0.05)',
                     }
                 }
             }
         }
     </script>
+    <style>
+        .formal-button {
+            transition: all 0.2s ease;
+        }
+        .formal-button:hover {
+            transform: translateY(-1px);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
 </head>
-<body class="font-body bg-background text-text antialiased min-h-screen flex items-center justify-center p-4">
-    <div class="text-center max-w-md">
-        <!-- 404 Illustration -->
-        <div class="relative mb-8">
-            <div class="text-[150px] font-heading font-bold text-primary/20 leading-none">404</div>
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-32 h-32 bg-primary rounded-full flex items-center justify-center shadow-clay">
-                    <svg class="w-20 h-20 text-secondary" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                    </svg>
+<body class="font-body bg-cream text-text antialiased min-h-screen flex flex-col">
+    
+    <!-- Top Banner -->
+    <div class="bg-navy text-white py-2 px-4 text-center text-sm">
+        <span class="font-medium">CỔNG DỊCH VỤ CÔNG QUỐC GIA - NƯỚC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b-2 border-gold shadow-formal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-3 cursor-pointer">
+                    <div class="w-11 h-11 bg-navy rounded flex items-center justify-center">
+                        <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="hidden sm:block">
+                        <span class="font-heading font-bold text-lg text-navy tracking-tight">Dịch Vụ Công</span>
+                        <span class="block text-xs text-muted font-medium tracking-widest uppercase">Việt Nam</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/" class="text-navy hover:text-vietred transition-colors font-medium text-sm tracking-wide">Trang chủ</a>
+                    <a href="/#services" class="text-navy hover:text-vietred transition-colors font-medium text-sm tracking-wide">Dịch vụ</a>
+                    <a href="/election.html" class="text-navy hover:text-vietred transition-colors font-medium text-sm tracking-wide">Bầu cử</a>
+                    <a href="/tracking.html" class="text-navy hover:text-vietred transition-colors font-medium text-sm tracking-wide">Tra cứu</a>
                 </div>
+                
+                <!-- Hotline -->
+                <a href="tel:1900.9095" class="hidden sm:flex items-center gap-2 text-vietred font-semibold">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>1900.9095</span>
+                </a>
             </div>
         </div>
+    </nav>
 
-        <h1 class="font-heading text-3xl font-bold text-text mb-4">
-            Không Tìm Thấy Trang
-        </h1>
-        
-        <p class="text-muted mb-8">
-            Trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển đến địa chỉ khác.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/" class="inline-flex items-center justify-center gap-2 bg-accent text-white font-heading font-semibold px-6 py-3 rounded-clay shadow-clay hover:opacity-90 transition-opacity cursor-pointer">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                    <polyline points="9,22 9,12 15,12 15,22"/>
+    <!-- Main Content -->
+    <main class="flex-1 flex items-center justify-center py-16 px-4">
+        <div class="text-center max-w-2xl mx-auto">
+            
+            <!-- 404 Illustration -->
+            <div class="mb-8 float-animation">
+                <div class="inline-flex items-center justify-center w-40 h-40 bg-navy rounded-2xl shadow-formal-lg">
+                    <div class="text-center">
+                        <span class="text-6xl font-heading font-bold text-gold">404</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Error Icon -->
+            <div class="w-20 h-20 mx-auto mb-6 bg-vietred/10 rounded-full flex items-center justify-center">
+                <svg class="w-10 h-10 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 8v4"/>
+                    <path d="M12 16h.01"/>
                 </svg>
-                Về Trang Chủ
-            </a>
-            <a href="/#services" class="inline-flex items-center justify-center gap-2 bg-white text-text font-heading font-semibold px-6 py-3 rounded-clay shadow-clay hover:bg-gray-50 transition-colors cursor-pointer border-2 border-gray-200">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"/>
-                    <path d="m21 21-4.35-4.35"/>
-                </svg>
-                Tìm Dịch Vụ
-            </a>
+            </div>
+            
+            <!-- Title -->
+            <h1 class="font-heading text-3xl sm:text-4xl font-bold text-navy mb-4">
+                Không Tìm Thấy Trang
+            </h1>
+            
+            <!-- Description -->
+            <p class="text-muted text-lg mb-8 max-w-md mx-auto leading-relaxed">
+                Trang bạn đang tìm kiếm không tồn tại, đã bị xóa hoặc đã được di chuyển đến địa chỉ khác.
+            </p>
+            
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <a href="/" class="formal-button inline-flex items-center gap-2 bg-navy hover:bg-navyLight text-white font-semibold px-8 py-4 rounded-lg shadow-formal-md transition-colors">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                    Về Trang Chủ
+                </a>
+                <button onclick="history.back()" class="formal-button inline-flex items-center gap-2 border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-8 py-4 rounded-lg transition-colors">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Quay Lại
+                </button>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="bg-white border border-border rounded-lg shadow-formal-md p-6 sm:p-8">
+                <h2 class="font-heading text-xl font-bold text-navy mb-6">
+                    Có thể bạn đang tìm kiếm
+                </h2>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <a href="/#services" class="flex items-center gap-3 p-4 bg-warmgray hover:bg-accent/10 rounded-lg transition-colors group">
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                            <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <span class="font-semibold text-navy block">Dịch Vụ Công</span>
+                            <span class="text-sm text-muted">Tra cứu các thủ tục hành chính</span>
+                        </div>
+                    </a>
+                    
+                    <a href="/election.html" class="flex items-center gap-3 p-4 bg-warmgray hover:bg-vietred/10 rounded-lg transition-colors group">
+                        <div class="w-12 h-12 bg-vietred/10 rounded-lg flex items-center justify-center group-hover:bg-vietred/20 transition-colors">
+                            <svg class="w-6 h-6 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22,4 12,14.01 9,11.01"/>
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <span class="font-semibold text-navy block">Bầu Cử 2026</span>
+                            <span class="text-sm text-muted">Thông tin bầu cử Quốc hội</span>
+                        </div>
+                    </a>
+                    
+                    <a href="/tracking.html" class="flex items-center gap-3 p-4 bg-warmgray hover:bg-gold/10 rounded-lg transition-colors group">
+                        <div class="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                            <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35"/>
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <span class="font-semibold text-navy block">Tra Cứu Hồ Sơ</span>
+                            <span class="text-sm text-muted">Kiểm tra tiến độ xử lý</span>
+                        </div>
+                    </a>
+                    
+                    <a href="/#contact" class="flex items-center gap-3 p-4 bg-warmgray hover:bg-navy/10 rounded-lg transition-colors group">
+                        <div class="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center group-hover:bg-navy/20 transition-colors">
+                            <svg class="w-6 h-6 text-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <span class="font-semibold text-navy block">Liên Hệ Hỗ Trợ</span>
+                            <span class="text-sm text-muted">Hotline: 1900.9095</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Search Suggestion -->
+            <div class="mt-8">
+                <p class="text-muted text-sm mb-4">Hoặc thử tìm kiếm</p>
+                <form action="/" method="GET" class="max-w-md mx-auto">
+                    <div class="relative">
+                        <input type="text" name="search" placeholder="Nhập từ khóa tìm kiếm..." class="w-full pl-12 pr-4 py-4 border border-border rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent shadow-formal transition-colors">
+                        <svg class="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                        </svg>
+                    </div>
+                </form>
+            </div>
         </div>
+    </main>
 
-        <p class="text-sm text-muted mt-8">
-            Cổng Dịch Vụ Công Quốc Gia - Việt Nam
-        </p>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-navy text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <span class="font-heading font-bold">Dịch Vụ Công Việt Nam</span>
+                </div>
+                <p class="text-white/50 text-sm text-center">
+                    © 2026 Cổng Dịch Vụ Công Quốc Gia - Nước Cộng hòa Xã hội Chủ nghĩa Việt Nam
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

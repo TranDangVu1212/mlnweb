@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi tiết dịch vụ - Dịch Vụ Công Việt Nam</title>
+    <title>Chi tiết dịch vụ - Cổng Dịch Vụ Công Quốc Gia</title>
     <meta name="description" content="Thông tin chi tiết về dịch vụ công tại Việt Nam">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23DA251D'/><polygon points='50,20 58,40 80,40 62,52 70,75 50,60 30,75 38,52 20,40 42,40' fill='%23FFCD00'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230F172A'/><polygon points='50,15 61,40 88,40 67,58 76,85 50,68 24,85 33,58 12,40 39,40' fill='%23B8860B'/></svg>">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Swiss Modernism -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,32 +21,30 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        heading: ['Fredoka', 'sans-serif'],
-                        body: ['Nunito', 'sans-serif'],
+                        heading: ['EB Garamond', 'serif'],
+                        body: ['IBM Plex Sans', 'sans-serif'],
                     },
                     colors: {
-                        primary: '#DA251D',
-                        secondary: '#FFCD00',
+                        navy: '#0F172A',
+                        navyLight: '#1E293B',
+                        vietred: '#B91C1C',
+                        vietredLight: '#DC2626',
+                        gold: '#B8860B',
+                        goldLight: '#D4A017',
                         accent: '#0369A1',
-                        background: '#FFF8F0',
-                        surface: '#FFFFFF',
+                        accentLight: '#0284C7',
+                        cream: '#FEFDF8',
+                        warmgray: '#F8F6F1',
+                        border: '#E5E2D9',
                         text: '#1E293B',
                         muted: '#64748B',
-                        success: '#22C55E',
-                        border: '#E2E8F0',
-                        peach: '#FDBCB4',
-                        babyblue: '#ADD8E6',
-                        mint: '#98FF98',
-                        lilac: '#E6E6FA',
+                        success: '#166534',
+                        successLight: '#22C55E',
                     },
                     boxShadow: {
-                        'clay': '8px 8px 16px rgba(0,0,0,0.1), -4px -4px 12px rgba(255,255,255,0.9), inset 2px 2px 4px rgba(255,255,255,0.5)',
-                        'clay-hover': '4px 4px 8px rgba(0,0,0,0.15), -2px -2px 8px rgba(255,255,255,0.9), inset 2px 2px 4px rgba(255,255,255,0.5)',
-                        'clay-card': '12px 12px 24px rgba(0,0,0,0.08), -6px -6px 16px rgba(255,255,255,0.95)',
-                    },
-                    borderRadius: {
-                        'clay': '20px',
-                        'clay-lg': '28px',
+                        'formal': '0 1px 3px rgba(15, 23, 42, 0.12), 0 1px 2px rgba(15, 23, 42, 0.08)',
+                        'formal-md': '0 4px 6px rgba(15, 23, 42, 0.1), 0 2px 4px rgba(15, 23, 42, 0.06)',
+                        'formal-lg': '0 10px 15px rgba(15, 23, 42, 0.1), 0 4px 6px rgba(15, 23, 42, 0.05)',
                     }
                 }
             }
@@ -60,222 +58,464 @@
                 transition-duration: 0.01ms !important;
             }
         }
-        .clay-button {
-            transition: all 0.2s ease-out;
+        .formal-button {
+            transition: all 0.2s ease;
         }
-        .clay-button:hover {
-            transform: translateY(-2px);
+        .formal-button:hover {
+            transform: translateY(-1px);
+        }
+        .step-line::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 2.5rem;
+            bottom: 0;
+            width: 2px;
+            background: #E5E2D9;
+        }
+        .step-line:last-child::before {
+            display: none;
         }
     </style>
 </head>
-<body class="font-body bg-background text-text antialiased">
+<body class="font-body bg-cream text-text antialiased">
     
+    <!-- Top Banner -->
+    <div class="bg-navy text-white py-2 px-4 text-center text-sm">
+        <span class="font-medium">CỔNG DỊCH VỤ CÔNG QUỐC GIA - NƯỚC CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</span>
+    </div>
+
     <!-- Navigation -->
-    <nav class="fixed top-4 left-4 right-4 z-50">
-        <div class="max-w-6xl mx-auto bg-white/90 backdrop-blur-md rounded-clay-lg shadow-clay-card border-2 border-white/50 px-4 sm:px-6 py-3">
-            <div class="flex items-center justify-between">
+    <nav class="bg-white border-b-2 border-gold sticky top-0 z-50 shadow-formal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
                 <a href="/" class="flex items-center gap-3 cursor-pointer">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center shadow-clay">
-                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-secondary" viewBox="0 0 24 24" fill="currentColor">
+                    <div class="w-11 h-11 bg-navy rounded flex items-center justify-center">
+                        <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
                         </svg>
                     </div>
                     <div class="hidden sm:block">
-                        <span class="font-heading font-bold text-lg text-primary">Dịch Vụ Công</span>
-                        <span class="block text-xs text-muted">Việt Nam</span>
+                        <span class="font-heading font-bold text-lg text-navy tracking-tight">Dịch Vụ Công</span>
+                        <span class="block text-xs text-muted font-medium tracking-widest uppercase">Việt Nam</span>
                     </div>
                 </a>
                 
-                <div class="hidden md:flex items-center gap-6">
-                    <a href="/#services" class="text-text hover:text-primary transition-colors font-medium cursor-pointer">Dịch vụ</a>
-                    <a href="/#guide" class="text-text hover:text-primary transition-colors font-medium cursor-pointer">Hướng dẫn</a>
-                    <a href="/#tracking" class="text-text hover:text-primary transition-colors font-medium cursor-pointer">Tra cứu</a>
-                    <a href="/#contact" class="text-text hover:text-primary transition-colors font-medium cursor-pointer">Liên hệ</a>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/" class="text-navy hover:text-vietred transition-colors font-medium text-sm tracking-wide">Trang chủ</a>
+                    <a href="/#services" class="text-navy hover:text-vietred transition-colors font-medium text-sm tracking-wide">Dịch vụ</a>
+                    <a href="/election.html" class="text-navy hover:text-vietred transition-colors font-medium text-sm tracking-wide">Bầu cử</a>
+                    <a href="/tracking.html" class="text-navy hover:text-vietred transition-colors font-medium text-sm tracking-wide">Tra cứu</a>
+                    <a href="/#contact" class="text-navy hover:text-vietred transition-colors font-medium text-sm tracking-wide">Liên hệ</a>
                 </div>
                 
-                <a href="/#vote" class="clay-button bg-primary text-white font-heading font-semibold px-4 sm:px-6 py-2 sm:py-3 rounded-clay shadow-clay hover:shadow-clay-hover flex items-center gap-2 cursor-pointer">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                        <polyline points="22,4 12,14.01 9,11.01"/>
-                    </svg>
-                    <span class="hidden sm:inline">Đi Bầu Cử</span>
-                </a>
+                <!-- Hotline -->
+                <div class="flex items-center gap-4">
+                    <a href="tel:1900.9095" class="hidden sm:flex items-center gap-2 text-vietred font-semibold">
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span>1900.9095</span>
+                    </a>
+                    <button class="md:hidden p-2 text-navy" onclick="toggleMobileMenu()">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-border">
+            <div class="px-4 py-3 space-y-2">
+                <a href="/" class="block py-2 text-navy font-medium">Trang chủ</a>
+                <a href="/#services" class="block py-2 text-navy font-medium">Dịch vụ</a>
+                <a href="/election.html" class="block py-2 text-navy font-medium">Bầu cử</a>
+                <a href="/tracking.html" class="block py-2 text-navy font-medium">Tra cứu</a>
+                <a href="/#contact" class="block py-2 text-navy font-medium">Liên hệ</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="pt-28 pb-16 px-4 sm:px-6">
-        <div class="max-w-6xl mx-auto">
+    <main class="py-8 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto">
+            
             <!-- Breadcrumb -->
-            <nav class="mb-6">
-                <ol class="flex items-center gap-2 text-sm text-muted">
-                    <li><a href="/" class="hover:text-accent cursor-pointer">Trang chủ</a></li>
-                    <li><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></li>
-                    <li><a href="/#services" class="hover:text-accent cursor-pointer">Dịch vụ</a></li>
-                    <li><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></li>
-                    <li id="breadcrumb-category" class="hover:text-accent cursor-pointer">Danh mục</li>
-                </ol>
+            <nav class="mb-6 flex items-center gap-2 text-sm">
+                <a href="/" class="text-muted hover:text-accent transition-colors">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                </a>
+                <svg class="w-4 h-4 text-border" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                <a href="/#services" class="text-muted hover:text-accent transition-colors">Dịch vụ công</a>
+                <svg class="w-4 h-4 text-border" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                <span id="breadcrumb-category" class="text-muted">Danh mục</span>
             </nav>
 
             <!-- Loading State -->
             <div id="loading-state" class="animate-pulse">
-                <div class="h-10 bg-gray-200 rounded-clay w-3/4 mb-4"></div>
-                <div class="h-6 bg-gray-200 rounded-clay w-1/2 mb-8"></div>
+                <div class="h-8 bg-border rounded w-2/3 mb-4"></div>
+                <div class="h-5 bg-border rounded w-1/2 mb-8"></div>
                 <div class="grid lg:grid-cols-3 gap-8">
-                    <div class="lg:col-span-2 space-y-4">
-                        <div class="h-64 bg-gray-200 rounded-clay-lg"></div>
-                        <div class="h-64 bg-gray-200 rounded-clay-lg"></div>
+                    <div class="lg:col-span-2 space-y-6">
+                        <div class="h-48 bg-border rounded-lg"></div>
+                        <div class="h-64 bg-border rounded-lg"></div>
+                        <div class="h-64 bg-border rounded-lg"></div>
                     </div>
-                    <div class="h-96 bg-gray-200 rounded-clay-lg"></div>
+                    <div class="space-y-6">
+                        <div class="h-64 bg-border rounded-lg"></div>
+                        <div class="h-48 bg-border rounded-lg"></div>
+                    </div>
                 </div>
             </div>
 
             <!-- Service Detail Content -->
             <div id="service-content" class="hidden">
-                <!-- Header -->
-                <div class="mb-8">
+                
+                <!-- Header Section -->
+                <div class="bg-white border border-border rounded-lg shadow-formal-md p-6 sm:p-8 mb-8">
                     <div class="flex flex-wrap items-center gap-3 mb-4">
-                        <span id="service-status" class="text-sm font-medium px-4 py-1 rounded-full"></span>
-                        <span id="service-level" class="text-sm font-medium px-4 py-1 rounded-full bg-accent/10 text-accent"></span>
+                        <span id="service-status" class="text-xs font-semibold px-3 py-1.5 rounded tracking-wide uppercase"></span>
+                        <span id="service-level" class="text-xs font-semibold px-3 py-1.5 rounded bg-accent/10 text-accent tracking-wide"></span>
+                        <span id="service-code" class="text-xs font-mono text-muted px-2 py-1 bg-warmgray rounded"></span>
                     </div>
-                    <h1 id="service-name" class="font-heading text-3xl sm:text-4xl font-bold text-text mb-4"></h1>
-                    <p id="service-description" class="text-lg text-muted"></p>
+                    <h1 id="service-name" class="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-navy mb-4 leading-tight"></h1>
+                    <p id="service-description" class="text-muted text-lg leading-relaxed"></p>
                 </div>
 
                 <div class="grid lg:grid-cols-3 gap-8">
-                    <!-- Main Content -->
+                    
+                    <!-- Main Content Column -->
                     <div class="lg:col-span-2 space-y-6">
-                        <!-- Quick Info -->
-                        <div class="bg-white rounded-clay-lg shadow-clay-card p-6 border-4 border-white">
-                            <h2 class="font-heading text-xl font-bold text-text mb-4 flex items-center gap-2">
-                                <svg class="w-6 h-6 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="12" y1="16" x2="12" y2="12"/>
-                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
-                                </svg>
-                                Thông Tin Chung
-                            </h2>
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div class="p-4 bg-babyblue/20 rounded-clay">
-                                    <span class="text-sm text-muted block">Thời gian xử lý</span>
-                                    <span id="service-time" class="font-semibold text-text"></span>
+                        
+                        <!-- Quick Info Cards -->
+                        <div class="grid sm:grid-cols-3 gap-4">
+                            <div class="bg-white border border-border rounded-lg p-5 shadow-formal">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <polyline points="12,6 12,12 16,14"/>
+                                        </svg>
+                                    </div>
+                                    <span class="text-xs text-muted font-medium uppercase tracking-wide">Thời gian</span>
                                 </div>
-                                <div class="p-4 bg-mint/20 rounded-clay">
-                                    <span class="text-sm text-muted block">Lệ phí</span>
-                                    <span id="service-fee" class="font-semibold text-text"></span>
+                                <p id="service-time" class="font-semibold text-navy"></p>
+                            </div>
+                            <div class="bg-white border border-border rounded-lg p-5 shadow-formal">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-10 h-10 bg-success/10 rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="12" y1="1" x2="12" y2="23"/>
+                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                        </svg>
+                                    </div>
+                                    <span class="text-xs text-muted font-medium uppercase tracking-wide">Lệ phí</span>
                                 </div>
-                                <div class="p-4 bg-lilac/20 rounded-clay sm:col-span-2">
-                                    <span class="text-sm text-muted block">Cơ quan thực hiện</span>
-                                    <span id="service-agency" class="font-semibold text-text"></span>
+                                <p id="service-fee" class="font-semibold text-navy"></p>
+                            </div>
+                            <div class="bg-white border border-border rounded-lg p-5 shadow-formal sm:col-span-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="text-xs text-muted font-medium uppercase tracking-wide">Đánh giá</span>
+                                </div>
+                                <p id="service-rating-main" class="font-semibold text-navy"></p>
+                            </div>
+                        </div>
+
+                        <!-- Agency Info -->
+                        <div class="bg-warmgray border border-border rounded-lg p-5">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 bg-navy/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 21h18"/>
+                                        <path d="M5 21V7l8-4v18"/>
+                                        <path d="M19 21V11l-6-4"/>
+                                        <path d="M9 9v.01"/>
+                                        <path d="M9 12v.01"/>
+                                        <path d="M9 15v.01"/>
+                                        <path d="M9 18v.01"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-muted font-medium uppercase tracking-wide block mb-1">Cơ quan thực hiện</span>
+                                    <p id="service-agency" class="font-semibold text-navy"></p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Requirements -->
-                        <div class="bg-white rounded-clay-lg shadow-clay-card p-6 border-4 border-white">
-                            <h2 class="font-heading text-xl font-bold text-text mb-4 flex items-center gap-2">
-                                <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                    <polyline points="14,2 14,8 20,8"/>
-                                    <line x1="16" y1="13" x2="8" y2="13"/>
-                                    <line x1="16" y1="17" x2="8" y2="17"/>
-                                </svg>
-                                Hồ Sơ Cần Chuẩn Bị
-                            </h2>
-                            <ul id="service-requirements" class="space-y-3">
-                                <!-- Dynamic content -->
-                            </ul>
-                        </div>
-
-                        <!-- Process -->
-                        <div class="bg-white rounded-clay-lg shadow-clay-card p-6 border-4 border-white">
-                            <h2 class="font-heading text-xl font-bold text-text mb-4 flex items-center gap-2">
-                                <svg class="w-6 h-6 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="9,11 12,14 22,4"/>
-                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-                                </svg>
-                                Quy Trình Thực Hiện
-                            </h2>
-                            <div id="service-process" class="space-y-4">
-                                <!-- Dynamic content -->
+                        <!-- Requirements Section -->
+                        <div class="bg-white border border-border rounded-lg shadow-formal-md overflow-hidden">
+                            <div class="bg-navy px-6 py-4">
+                                <h2 class="font-heading text-xl font-bold text-white flex items-center gap-3">
+                                    <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14,2 14,8 20,8"/>
+                                        <line x1="16" y1="13" x2="8" y2="13"/>
+                                        <line x1="16" y1="17" x2="8" y2="17"/>
+                                    </svg>
+                                    Hồ Sơ Cần Chuẩn Bị
+                                </h2>
+                            </div>
+                            <div class="p-6">
+                                <ul id="service-requirements" class="space-y-4">
+                                    <!-- Dynamic content -->
+                                </ul>
                             </div>
                         </div>
 
-                        <!-- FAQs -->
-                        <div id="faqs-section" class="bg-white rounded-clay-lg shadow-clay-card p-6 border-4 border-white">
-                            <h2 class="font-heading text-xl font-bold text-text mb-4 flex items-center gap-2">
-                                <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                                    <line x1="12" y1="17" x2="12.01" y2="17"/>
-                                </svg>
-                                Câu Hỏi Thường Gặp
-                            </h2>
-                            <div id="service-faqs" class="space-y-4">
-                                <!-- Dynamic content -->
+                        <!-- Process Section -->
+                        <div class="bg-white border border-border rounded-lg shadow-formal-md overflow-hidden">
+                            <div class="bg-accent px-6 py-4">
+                                <h2 class="font-heading text-xl font-bold text-white flex items-center gap-3">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9,11 12,14 22,4"/>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                                    </svg>
+                                    Quy Trình Thực Hiện
+                                </h2>
+                            </div>
+                            <div class="p-6">
+                                <div id="service-process" class="space-y-0">
+                                    <!-- Dynamic content -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Legal Basis -->
+                        <div class="bg-white border border-border rounded-lg shadow-formal-md overflow-hidden">
+                            <div class="bg-gold px-6 py-4">
+                                <h2 class="font-heading text-xl font-bold text-navy flex items-center gap-3">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                                    </svg>
+                                    Căn Cứ Pháp Lý
+                                </h2>
+                            </div>
+                            <div class="p-6">
+                                <ul id="service-legal" class="space-y-3 text-sm">
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-4 h-4 text-muted flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 18l6-6-6-6"/>
+                                        </svg>
+                                        <span class="text-muted">Luật Hộ tịch 2014</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-4 h-4 text-muted flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 18l6-6-6-6"/>
+                                        </svg>
+                                        <span class="text-muted">Nghị định 123/2015/NĐ-CP</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <svg class="w-4 h-4 text-muted flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M9 18l6-6-6-6"/>
+                                        </svg>
+                                        <span class="text-muted">Thông tư 01/2017/TT-BTP</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- FAQs Section -->
+                        <div id="faqs-section" class="bg-white border border-border rounded-lg shadow-formal-md overflow-hidden">
+                            <div class="bg-warmgray px-6 py-4 border-b border-border">
+                                <h2 class="font-heading text-xl font-bold text-navy flex items-center gap-3">
+                                    <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                    </svg>
+                                    Câu Hỏi Thường Gặp
+                                </h2>
+                            </div>
+                            <div class="divide-y divide-border">
+                                <div id="service-faqs">
+                                    <!-- Dynamic content -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Section -->
+                        <div class="bg-white border border-border rounded-lg shadow-formal-md overflow-hidden">
+                            <div class="bg-warmgray px-6 py-4 border-b border-border">
+                                <h2 class="font-heading text-xl font-bold text-navy flex items-center gap-3">
+                                    <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                    </svg>
+                                    Đánh Giá Dịch Vụ
+                                </h2>
+                            </div>
+                            <div class="p-6">
+                                <form id="review-form" class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-navy mb-2">Đánh giá của bạn</label>
+                                        <div class="flex gap-2" id="rating-stars">
+                                            <button type="button" class="star-btn text-3xl text-border hover:text-gold transition-colors" data-rating="1">★</button>
+                                            <button type="button" class="star-btn text-3xl text-border hover:text-gold transition-colors" data-rating="2">★</button>
+                                            <button type="button" class="star-btn text-3xl text-border hover:text-gold transition-colors" data-rating="3">★</button>
+                                            <button type="button" class="star-btn text-3xl text-border hover:text-gold transition-colors" data-rating="4">★</button>
+                                            <button type="button" class="star-btn text-3xl text-border hover:text-gold transition-colors" data-rating="5">★</button>
+                                        </div>
+                                        <input type="hidden" name="rating" id="rating-input" value="0">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-navy mb-2">Nhận xét</label>
+                                        <textarea name="comment" rows="3" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors" placeholder="Chia sẻ trải nghiệm của bạn..."></textarea>
+                                    </div>
+                                    <div class="grid sm:grid-cols-2 gap-4">
+                                        <input type="text" name="userName" class="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors" placeholder="Họ tên (không bắt buộc)">
+                                        <input type="email" name="userEmail" class="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors" placeholder="Email (không bắt buộc)">
+                                    </div>
+                                    <button type="submit" class="formal-button bg-accent hover:bg-accentLight text-white font-semibold px-6 py-3 rounded-lg shadow-formal transition-colors">
+                                        Gửi đánh giá
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Sidebar -->
+                    <!-- Sidebar Column -->
                     <div class="space-y-6">
+                        
                         <!-- Action Card -->
-                        <div class="bg-gradient-to-br from-accent to-blue-600 rounded-clay-lg shadow-clay-card p-6 text-white">
-                            <h3 class="font-heading text-xl font-bold mb-4">Thực Hiện Ngay</h3>
-                            <p class="text-white/90 mb-6">Đăng nhập để nộp hồ sơ trực tuyến và theo dõi tiến độ xử lý.</p>
-                            <a href="#" class="clay-button block w-full bg-white text-accent font-heading font-semibold py-4 rounded-clay text-center cursor-pointer hover:bg-gray-50">
+                        <div class="bg-navy rounded-lg shadow-formal-lg p-6 text-white">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-gold/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22,4 12,14.01 9,11.01"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-heading text-xl font-bold">Thực Hiện Ngay</h3>
+                                    <p class="text-white/70 text-sm">Trực tuyến 24/7</p>
+                                </div>
+                            </div>
+                            <p class="text-white/80 mb-6 text-sm leading-relaxed">Nộp hồ sơ trực tuyến để tiết kiệm thời gian và theo dõi tiến độ xử lý.</p>
+                            <a href="#" id="submit-online-btn" class="formal-button block w-full bg-gold hover:bg-goldLight text-navy font-bold py-4 rounded-lg text-center transition-colors">
                                 Nộp Hồ Sơ Online
                             </a>
-                            <a href="/#tracking" class="block w-full text-center mt-3 text-white/90 hover:text-white underline">
-                                Tra cứu hồ sơ đã nộp
+                            <a href="/tracking.html" class="block w-full text-center mt-4 text-gold hover:text-goldLight text-sm font-medium transition-colors">
+                                Tra cứu hồ sơ đã nộp →
                             </a>
+                        </div>
+
+                        <!-- Appointment Booking -->
+                        <div class="bg-white border border-border rounded-lg shadow-formal-md overflow-hidden">
+                            <div class="bg-vietred px-5 py-3">
+                                <h3 class="font-heading text-lg font-bold text-white flex items-center gap-2">
+                                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    Đặt Lịch Hẹn
+                                </h3>
+                            </div>
+                            <div class="p-5">
+                                <p class="text-sm text-muted mb-4">Đặt lịch hẹn trước để được phục vụ nhanh chóng khi đến trực tiếp.</p>
+                                <button onclick="showAppointmentModal()" class="formal-button w-full bg-vietred hover:bg-vietredLight text-white font-semibold py-3 rounded-lg transition-colors">
+                                    Đặt lịch ngay
+                                </button>
+                            </div>
                         </div>
 
                         <!-- Forms Download -->
-                        <div id="forms-section" class="bg-white rounded-clay-lg shadow-clay-card p-6 border-4 border-white">
-                            <h3 class="font-heading text-lg font-bold text-text mb-4 flex items-center gap-2">
-                                <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                    <polyline points="7,10 12,15 17,10"/>
-                                    <line x1="12" y1="15" x2="12" y2="3"/>
-                                </svg>
-                                Biểu Mẫu
-                            </h3>
-                            <div id="service-forms" class="space-y-2">
-                                <!-- Dynamic content -->
+                        <div id="forms-section" class="bg-white border border-border rounded-lg shadow-formal-md overflow-hidden">
+                            <div class="bg-warmgray px-5 py-3 border-b border-border">
+                                <h3 class="font-heading text-lg font-bold text-navy flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                        <polyline points="7,10 12,15 17,10"/>
+                                        <line x1="12" y1="15" x2="12" y2="3"/>
+                                    </svg>
+                                    Biểu Mẫu Tải Về
+                                </h3>
+                            </div>
+                            <div class="p-4">
+                                <div id="service-forms" class="space-y-2">
+                                    <!-- Dynamic content -->
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Stats -->
-                        <div class="bg-peach/20 rounded-clay-lg p-6 border-4 border-white">
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-secondary" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                    </svg>
-                                    <span id="service-rating" class="font-bold text-text"></span>
+                        <!-- Stats Card -->
+                        <div class="bg-warmgray border border-border rounded-lg p-5">
+                            <h3 class="font-heading text-lg font-bold text-navy mb-4">Thống Kê Dịch Vụ</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <svg class="w-5 h-5 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                        </svg>
+                                        <span id="service-rating" class="font-bold text-navy"></span>
+                                    </div>
+                                    <span class="text-sm text-muted">Điểm đánh giá</span>
                                 </div>
-                                <span class="text-sm text-muted">Đánh giá</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                        <circle cx="12" cy="12" r="3"/>
-                                    </svg>
-                                    <span id="service-views" class="font-bold text-text"></span>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                            <circle cx="12" cy="12" r="3"/>
+                                        </svg>
+                                        <span id="service-views" class="font-bold text-navy"></span>
+                                    </div>
+                                    <span class="text-sm text-muted">Lượt xem</span>
                                 </div>
-                                <span class="text-sm text-muted">Lượt xem</span>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <svg class="w-5 h-5 text-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9,11 12,14 22,4"/>
+                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                                        </svg>
+                                        <span id="service-completed" class="font-bold text-navy">12,847</span>
+                                    </div>
+                                    <span class="text-sm text-muted">Đã xử lý</span>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Related Services -->
-                        <div id="related-section" class="bg-white rounded-clay-lg shadow-clay-card p-6 border-4 border-white">
-                            <h3 class="font-heading text-lg font-bold text-text mb-4">Dịch Vụ Liên Quan</h3>
-                            <div id="related-services" class="space-y-3">
-                                <!-- Dynamic content -->
+                        <div id="related-section" class="bg-white border border-border rounded-lg shadow-formal-md overflow-hidden">
+                            <div class="bg-warmgray px-5 py-3 border-b border-border">
+                                <h3 class="font-heading text-lg font-bold text-navy">Dịch Vụ Liên Quan</h3>
                             </div>
+                            <div class="p-4">
+                                <div id="related-services" class="space-y-2">
+                                    <!-- Dynamic content -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Support Card -->
+                        <div class="bg-white border-2 border-vietred rounded-lg p-5">
+                            <h3 class="font-heading text-lg font-bold text-navy mb-3 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                Cần Hỗ Trợ?
+                            </h3>
+                            <p class="text-sm text-muted mb-4">Liên hệ tổng đài hỗ trợ nếu bạn cần giải đáp thắc mắc.</p>
+                            <a href="tel:1900.9095" class="flex items-center justify-center gap-2 w-full bg-vietred/10 hover:bg-vietred/20 text-vietred font-bold py-3 rounded-lg transition-colors">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                1900.9095
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -283,13 +523,15 @@
 
             <!-- Error State -->
             <div id="error-state" class="hidden text-center py-16">
-                <svg class="w-24 h-24 mx-auto text-muted mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M12 8v4m0 4h.01"/>
-                </svg>
-                <h2 class="font-heading text-2xl font-bold text-text mb-2">Không Tìm Thấy Dịch Vụ</h2>
-                <p class="text-muted mb-6">Dịch vụ bạn tìm kiếm không tồn tại hoặc đã bị xóa.</p>
-                <a href="/" class="clay-button inline-flex items-center gap-2 bg-accent text-white font-heading font-semibold px-6 py-3 rounded-clay shadow-clay hover:shadow-clay-hover cursor-pointer">
+                <div class="w-24 h-24 mx-auto bg-vietred/10 rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-12 h-12 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 8v4m0 4h.01"/>
+                    </svg>
+                </div>
+                <h2 class="font-heading text-2xl font-bold text-navy mb-2">Không Tìm Thấy Dịch Vụ</h2>
+                <p class="text-muted mb-6 max-w-md mx-auto">Dịch vụ bạn tìm kiếm không tồn tại hoặc đã được chuyển sang trang khác.</p>
+                <a href="/" class="formal-button inline-flex items-center gap-2 bg-navy hover:bg-navyLight text-white font-semibold px-6 py-3 rounded-lg shadow-formal transition-colors">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
                     </svg>
@@ -299,19 +541,122 @@
         </div>
     </main>
 
+    <!-- Appointment Modal -->
+    <div id="appointment-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+            <div class="fixed inset-0 bg-navy/50 transition-opacity" onclick="hideAppointmentModal()"></div>
+            <div class="relative bg-white rounded-lg shadow-formal-lg max-w-lg w-full mx-4 overflow-hidden">
+                <div class="bg-navy px-6 py-4">
+                    <h3 class="font-heading text-xl font-bold text-white">Đặt Lịch Hẹn</h3>
+                </div>
+                <form id="appointment-form" class="p-6 space-y-4">
+                    <input type="hidden" name="serviceId" id="appointment-service-id">
+                    <div>
+                        <label class="block text-sm font-medium text-navy mb-2">Họ và tên *</label>
+                        <input type="text" name="fullName" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-navy mb-2">Số điện thoại *</label>
+                        <input type="tel" name="phone" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent">
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-navy mb-2">Ngày hẹn *</label>
+                            <input type="date" name="date" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-navy mb-2">Giờ hẹn *</label>
+                            <select name="time" required class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent">
+                                <option value="">Chọn giờ</option>
+                                <option value="08:00">08:00 - 09:00</option>
+                                <option value="09:00">09:00 - 10:00</option>
+                                <option value="10:00">10:00 - 11:00</option>
+                                <option value="14:00">14:00 - 15:00</option>
+                                <option value="15:00">15:00 - 16:00</option>
+                                <option value="16:00">16:00 - 17:00</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-navy mb-2">Ghi chú</label>
+                        <textarea name="notes" rows="2" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent/20 focus:border-accent" placeholder="Ghi chú thêm (nếu có)"></textarea>
+                    </div>
+                    <div class="flex gap-3 pt-2">
+                        <button type="button" onclick="hideAppointmentModal()" class="flex-1 px-6 py-3 border border-border rounded-lg font-medium hover:bg-warmgray transition-colors">
+                            Hủy
+                        </button>
+                        <button type="submit" class="flex-1 bg-vietred hover:bg-vietredLight text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+                            Xác nhận đặt lịch
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer class="bg-text text-white py-8 px-4 sm:px-6">
-        <div class="max-w-6xl mx-auto text-center">
-            <p class="text-white/70">© 2026 Cổng Dịch Vụ Công Quốc Gia - Nước Cộng hòa Xã hội Chủ nghĩa Việt Nam</p>
+    <footer class="bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center">
+                            <svg class="w-7 h-7 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-heading font-bold text-xl">Dịch Vụ Công</span>
+                            <span class="block text-sm text-white/60">Việt Nam</span>
+                        </div>
+                    </div>
+                    <p class="text-white/70 text-sm leading-relaxed max-w-md">
+                        Cổng Dịch vụ công Quốc gia - Nơi cung cấp thông tin và dịch vụ công trực tuyến cho người dân và doanh nghiệp.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Liên kết</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="text-white/70 hover:text-gold transition-colors">Trang chủ</a></li>
+                        <li><a href="/#services" class="text-white/70 hover:text-gold transition-colors">Dịch vụ công</a></li>
+                        <li><a href="/election.html" class="text-white/70 hover:text-gold transition-colors">Bầu cử</a></li>
+                        <li><a href="/tracking.html" class="text-white/70 hover:text-gold transition-colors">Tra cứu hồ sơ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Liên hệ</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center gap-2 text-white/70">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+                            </svg>
+                            <a href="tel:1900.9095" class="hover:text-gold transition-colors">1900.9095</a>
+                        </li>
+                        <li class="flex items-center gap-2 text-white/70">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <a href="mailto:hotro@dichvucong.gov.vn" class="hover:text-gold transition-colors">hotro@dichvucong.gov.vn</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8">
+                <p class="text-center text-white/50 text-sm">
+                    © 2026 Cổng Dịch Vụ Công Quốc Gia - Nước Cộng hòa Xã hội Chủ nghĩa Việt Nam
+                </p>
+            </div>
         </div>
     </footer>
 
     <script>
         const API_BASE = window.location.origin;
+        let currentServiceId = '';
 
         // Get service ID from URL
         const pathParts = window.location.pathname.split('/');
-        const serviceId = pathParts[pathParts.length - 1];
+        currentServiceId = pathParts[pathParts.length - 1];
 
         // Format number
         function formatNumber(num) {
@@ -321,9 +666,9 @@
         // Get status badge
         function getStatusBadge(status) {
             const statusMap = {
-                'online': { text: 'Trực tuyến hoàn toàn', class: 'bg-success/20 text-success' },
-                'partial': { text: 'Một phần trực tuyến', class: 'bg-secondary/20 text-yellow-700' },
-                'offline': { text: 'Trực tiếp', class: 'bg-muted/20 text-muted' }
+                'online': { text: 'Trực tuyến toàn trình', class: 'bg-success/10 text-success border border-success/20' },
+                'partial': { text: 'Trực tuyến một phần', class: 'bg-gold/10 text-gold border border-gold/20' },
+                'offline': { text: 'Trực tiếp', class: 'bg-muted/10 text-muted border border-muted/20' }
             };
             return statusMap[status] || statusMap['offline'];
         }
@@ -332,17 +677,36 @@
         function getLevelText(level) {
             const levels = {
                 1: 'Mức độ 1',
-                2: 'Mức độ 2',
+                2: 'Mức độ 2', 
                 3: 'Mức độ 3',
-                4: 'Mức độ 4'
+                4: 'Mức độ 4 - Toàn trình'
             };
             return levels[level] || 'Không xác định';
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Show appointment modal
+        function showAppointmentModal() {
+            document.getElementById('appointment-modal').classList.remove('hidden');
+            document.getElementById('appointment-service-id').value = currentServiceId;
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Hide appointment modal
+        function hideAppointmentModal() {
+            document.getElementById('appointment-modal').classList.add('hidden');
+            document.body.style.overflow = '';
         }
 
         // Load service detail
         async function loadServiceDetail() {
             try {
-                const response = await fetch(`${API_BASE}/api/services/${serviceId}`);
+                const response = await fetch(`${API_BASE}/api/services/${currentServiceId}`);
                 const result = await response.json();
 
                 if (!result.success) {
@@ -352,7 +716,7 @@
                 const service = result.data;
                 
                 // Update page title
-                document.title = `${service.name} - Dịch Vụ Công Việt Nam`;
+                document.title = `${service.name} - Cổng Dịch Vụ Công Quốc Gia`;
                 
                 // Update breadcrumb
                 if (service.category) {
@@ -362,8 +726,9 @@
                 // Update header
                 const statusInfo = getStatusBadge(service.status);
                 document.getElementById('service-status').textContent = statusInfo.text;
-                document.getElementById('service-status').className = `text-sm font-medium px-4 py-1 rounded-full ${statusInfo.class}`;
+                document.getElementById('service-status').className = `text-xs font-semibold px-3 py-1.5 rounded tracking-wide uppercase ${statusInfo.class}`;
                 document.getElementById('service-level').textContent = getLevelText(service.level);
+                document.getElementById('service-code').textContent = `#${service.id.toUpperCase()}`;
                 document.getElementById('service-name').textContent = service.name;
                 document.getElementById('service-description').textContent = service.fullDescription;
 
@@ -374,25 +739,26 @@
 
                 // Update requirements
                 const requirementsEl = document.getElementById('service-requirements');
-                requirementsEl.innerHTML = service.requirements.map(req => `
-                    <li class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9,11 12,14 22,4"/>
-                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-                        </svg>
-                        <span>${req}</span>
+                requirementsEl.innerHTML = service.requirements.map((req, index) => `
+                    <li class="flex items-start gap-4 p-4 bg-warmgray rounded-lg">
+                        <div class="w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                            ${index + 1}
+                        </div>
+                        <span class="text-navy pt-1">${req}</span>
                     </li>
                 `).join('');
 
                 // Update process
                 const processEl = document.getElementById('service-process');
                 processEl.innerHTML = service.process.map((step, index) => `
-                    <div class="flex items-start gap-4">
-                        <div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
-                            ${index + 1}
-                        </div>
-                        <div class="flex-1 pt-1">
-                            <p class="text-text">${step.replace(/^Bước \d+:\s*/, '')}</p>
+                    <div class="relative step-line pb-6 last:pb-0">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold z-10">
+                                ${index + 1}
+                            </div>
+                            <div class="flex-1 pt-1">
+                                <p class="text-navy">${step.replace(/^Bước \d+:\s*/, '')}</p>
+                            </div>
                         </div>
                     </div>
                 `).join('');
@@ -401,9 +767,12 @@
                 if (service.faqs && service.faqs.length > 0) {
                     const faqsEl = document.getElementById('service-faqs');
                     faqsEl.innerHTML = service.faqs.map(faq => `
-                        <div class="border-b border-border pb-4 last:border-0 last:pb-0">
-                            <h4 class="font-semibold text-text mb-2">${faq.question}</h4>
-                            <p class="text-muted text-sm">${faq.answer}</p>
+                        <div class="p-5">
+                            <h4 class="font-semibold text-navy mb-2 flex items-start gap-2">
+                                <span class="text-accent">Q:</span>
+                                ${faq.question}
+                            </h4>
+                            <p class="text-muted text-sm pl-5">${faq.answer}</p>
                         </div>
                     `).join('');
                 } else {
@@ -414,12 +783,22 @@
                 if (service.forms && service.forms.length > 0) {
                     const formsEl = document.getElementById('service-forms');
                     formsEl.innerHTML = service.forms.map(form => `
-                        <a href="${form.url}" class="flex items-center gap-3 p-3 bg-background rounded-clay hover:bg-accent/10 transition-colors cursor-pointer">
-                            <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14,2 14,8 20,8"/>
+                        <a href="${form.url}" class="flex items-center gap-3 p-3 bg-warmgray hover:bg-accent/10 rounded-lg transition-colors group">
+                            <div class="w-10 h-10 bg-vietred/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-vietred" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <span class="text-sm font-medium text-navy block truncate">${form.name}</span>
+                                <span class="text-xs text-muted">PDF</span>
+                            </div>
+                            <svg class="w-4 h-4 text-muted group-hover:text-accent transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7,10 12,15 17,10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
                             </svg>
-                            <span class="text-sm font-medium text-text">${form.name}</span>
                         </a>
                     `).join('');
                 } else {
@@ -428,14 +807,18 @@
 
                 // Update stats
                 document.getElementById('service-rating').textContent = service.rating + '/5';
+                document.getElementById('service-rating-main').textContent = service.rating + '/5 ⭐';
                 document.getElementById('service-views').textContent = formatNumber(service.views);
 
                 // Update related services
                 if (service.relatedServices && service.relatedServices.length > 0) {
                     const relatedEl = document.getElementById('related-services');
                     relatedEl.innerHTML = service.relatedServices.map(related => `
-                        <a href="/dich-vu/${related.id}" class="block p-3 bg-background rounded-clay hover:bg-accent/10 transition-colors cursor-pointer">
-                            <span class="font-medium text-text text-sm">${related.name}</span>
+                        <a href="/dich-vu/${related.id}" class="flex items-center gap-3 p-3 bg-warmgray hover:bg-accent/10 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18l6-6-6-6"/>
+                            </svg>
+                            <span class="font-medium text-navy text-sm">${related.name}</span>
                         </a>
                     `).join('');
                 } else {
@@ -452,6 +835,101 @@
                 document.getElementById('error-state').classList.remove('hidden');
             }
         }
+
+        // Rating stars functionality
+        document.querySelectorAll('.star-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const rating = parseInt(this.dataset.rating);
+                document.getElementById('rating-input').value = rating;
+                
+                document.querySelectorAll('.star-btn').forEach((star, index) => {
+                    if (index < rating) {
+                        star.classList.remove('text-border');
+                        star.classList.add('text-gold');
+                    } else {
+                        star.classList.remove('text-gold');
+                        star.classList.add('text-border');
+                    }
+                });
+            });
+        });
+
+        // Review form submission
+        document.getElementById('review-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const rating = parseInt(formData.get('rating') || document.getElementById('rating-input').value);
+            
+            if (!rating || rating < 1) {
+                alert('Vui lòng chọn số sao đánh giá');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/api/services/${currentServiceId}/reviews`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        rating,
+                        comment: formData.get('comment'),
+                        userName: formData.get('userName'),
+                        userEmail: formData.get('userEmail')
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('Cảm ơn bạn đã đánh giá dịch vụ!');
+                    this.reset();
+                    document.querySelectorAll('.star-btn').forEach(star => {
+                        star.classList.remove('text-gold');
+                        star.classList.add('text-border');
+                    });
+                } else {
+                    alert(result.message || 'Có lỗi xảy ra');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Không thể gửi đánh giá. Vui lòng thử lại sau.');
+            }
+        });
+
+        // Appointment form submission
+        document.getElementById('appointment-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+
+            try {
+                const response = await fetch(`${API_BASE}/api/appointments`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        serviceId: formData.get('serviceId'),
+                        date: formData.get('date'),
+                        time: formData.get('time'),
+                        fullName: formData.get('fullName'),
+                        phone: formData.get('phone'),
+                        notes: formData.get('notes')
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert(`Đặt lịch thành công!\nMã lịch hẹn: ${result.data.appointmentCode}\nVui lòng lưu lại mã này để tra cứu.`);
+                    hideAppointmentModal();
+                    this.reset();
+                } else {
+                    alert(result.message || 'Có lỗi xảy ra');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Không thể đặt lịch. Vui lòng thử lại sau.');
+            }
+        });
 
         // Load on page ready
         document.addEventListener('DOMContentLoaded', loadServiceDetail);
