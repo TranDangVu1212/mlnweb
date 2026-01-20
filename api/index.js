@@ -9,13 +9,29 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Load data
+// Load data - try multiple paths for Vercel compatibility
 let servicesData = {};
-try {
-    const dataPath = path.join(process.cwd(), 'data', 'services.json');
-    servicesData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-} catch (error) {
-    console.error('Error loading services data:', error);
+const possiblePaths = [
+    path.join(__dirname, '..', 'data', 'services.json'),
+    path.join(process.cwd(), 'data', 'services.json'),
+    path.resolve('./data/services.json')
+];
+
+for (const dataPath of possiblePaths) {
+    try {
+        if (fs.existsSync(dataPath)) {
+            servicesData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+            console.log('Successfully loaded data from:', dataPath);
+            break;
+        }
+    } catch (error) {
+        console.error('Error loading from', dataPath, ':', error.message);
+    }
+}
+
+if (!servicesData.categories) {
+    console.error('Warning: No data loaded, using empty data');
+    servicesData = { categories: [], services: [], news: [], statistics: {} };
 }
 
 // In-memory storage for contacts and tracking
