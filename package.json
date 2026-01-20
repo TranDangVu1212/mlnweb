@@ -9,7 +9,7 @@
     "vercel-build": "echo 'Build completed'"
   },
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   },
   "keywords": [
     "dichvucong",
