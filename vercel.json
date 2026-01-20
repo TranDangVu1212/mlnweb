@@ -5,26 +5,22 @@
       "includeFiles": "data/**"
     }
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/index.js"
+      "source": "/api/(.*)",
+      "destination": "/api/index.js"
     },
     {
-      "src": "/dich-vu/(.*)",
-      "dest": "/service-detail.html"
+      "source": "/dich-vu/(.*)",
+      "destination": "/service-detail.html"
     },
     {
-      "src": "/tra-cuu",
-      "dest": "/tracking.html"
+      "source": "/tra-cuu",
+      "destination": "/tracking.html"
     },
     {
-      "src": "/bau-cu",
-      "dest": "/election.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/bau-cu",
+      "destination": "/election.html"
     }
   ],
   "headers": [
